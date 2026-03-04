@@ -1,0 +1,86 @@
+{
+  "created": "2026-03-04T08:29:57.556291+00:00",
+  "modified": "2026-03-04T08:29:57.908772+00:00",
+  "id": 18860349,
+  "conceptrecid": "18859844",
+  "doi": "10.5281/zenodo.18860349",
+  "conceptdoi": "10.5281/zenodo.18859844",
+  "doi_url": "https://doi.org/10.5281/zenodo.18860349",
+  "metadata": {
+    "title": "Marketing Data Connectors: A Unified Integration Architecture for Multi-Platform Attribution",
+    "doi": "10.5281/zenodo.18860349",
+    "publication_date": "2026-03-04",
+    "description": "Attribution models are only as good as their data \u2014 yet marketing data is fragmented across dozens of platforms with incompatible schemas, rate limits, and authentication models. This paper presents a unified connector architecture that normalizes data from Facebook Ads, Google Ads, TikTok, LinkedIn, Salesforce, and 40+ additional platforms into a canonical attribution event model. The framework includes OAuth2 authentication, intelligent rate limiting, schema validation, and incremental sync \u2014 providing the data infrastructure layer for Robinson (2026a) through (2026h).",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Robinson, Michael Forsythe",
+        "affiliation": null
+      }
+    ],
+    "keywords": [
+      "marketing data connectors",
+      "data integration",
+      "multi-platform attribution",
+      "canonical data model",
+      "API integration",
+      "ETL pipeline",
+      "marketing analytics"
+    ],
+    "version": "2.0.0",
+    "license": "mit-license",
+    "imprint_publisher": "Zenodo",
+    "upload_type": "publication",
+    "publication_type": "report",
+    "prereserve_doi": {
+      "doi": "10.5281/zenodo.18860349",
+      "recid": 18860349
+    }
+  },
+  "title": "Marketing Data Connectors: A Unified Integration Architecture for Multi-Platform Attribution",
+  "links": {
+    "self": "https://zenodo.org/api/records/18860349",
+    "html": "https://zenodo.org/records/18860349",
+    "doi": "https://doi.org/10.5281/zenodo.18860349",
+    "parent_doi": "https://doi.org/10.5281/zenodo.18859844",
+    "badge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.18860349.svg",
+    "conceptbadge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.18859844.svg",
+    "files": "https://zenodo.org/api/records/18860349/files",
+    "bucket": "https://zenodo.org/api/files/74cf6005-d8d4-456b-9e16-e353b5bc3533",
+    "thumb250": "https://zenodo.org/record/18860349/thumb250",
+    "thumbs": {
+      "10": "https://zenodo.org/record/18860349/thumb10",
+      "50": "https://zenodo.org/record/18860349/thumb50",
+      "100": "https://zenodo.org/record/18860349/thumb100",
+      "250": "https://zenodo.org/record/18860349/thumb250",
+      "750": "https://zenodo.org/record/18860349/thumb750",
+      "1200": "https://zenodo.org/record/18860349/thumb1200"
+    },
+    "latest_draft": "https://zenodo.org/api/deposit/depositions/18860349",
+    "latest_draft_html": "https://zenodo.org/deposit/18860349",
+    "publish": "https://zenodo.org/api/deposit/depositions/18860349/actions/publish",
+    "edit": "https://zenodo.org/api/deposit/depositions/18860349/actions/edit",
+    "discard": "https://zenodo.org/api/deposit/depositions/18860349/actions/discard",
+    "newversion": "https://zenodo.org/api/deposit/depositions/18860349/actions/newversion",
+    "record": "https://zenodo.org/api/records/18860349",
+    "record_html": "https://zenodo.org/record/18860349",
+    "latest": "https://zenodo.org/api/records/18860349/versions/latest",
+    "latest_html": "https://zenodo.org/records/18860349/latest"
+  },
+  "record_id": 18860349,
+  "owner": 1541441,
+  "files": [
+    {
+      "id": "359fd777-ec9c-4208-963c-020903e104ae",
+      "filename": "Marketing_Data_Connectors.pdf",
+      "filesize": 325529,
+      "checksum": "39b545f4ed4c646527070c3932f7750b",
+      "links": {
+        "self": "https://zenodo.org/api/records/18860349/files/359fd777-ec9c-4208-963c-020903e104ae",
+        "download": "https://zenodo.org/api/records/18860349/draft/files/Marketing_Data_Connectors.pdf/content"
+      }
+    }
+  ],
+  "state": "done",
+  "submitted": true
+}

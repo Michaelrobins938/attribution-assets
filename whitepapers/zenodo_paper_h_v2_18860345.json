@@ -1,0 +1,86 @@
+{
+  "created": "2026-03-04T08:29:49.016760+00:00",
+  "modified": "2026-03-04T08:29:49.397671+00:00",
+  "id": 18860345,
+  "conceptrecid": "18859842",
+  "doi": "10.5281/zenodo.18860345",
+  "conceptdoi": "10.5281/zenodo.18859842",
+  "doi_url": "https://doi.org/10.5281/zenodo.18860345",
+  "metadata": {
+    "title": "Incrementality Testing at Scale: Geo-Lift Experiments and Synthetic Control Methods",
+    "doi": "10.5281/zenodo.18860345",
+    "publication_date": "2026-03-04",
+    "description": "Attribution models answer 'who gets credit?' \u2014 incrementality testing answers 'would the sale have happened anyway?' This paper presents a comprehensive incrementality testing framework combining geo-lift randomized experiments with synthetic control methods (Difference-in-Differences, Synthetic Control Method, Bayesian Structural Time Series). The framework provides unbiased causal lift estimates with formal confidence intervals, enabling budget reallocation decisions grounded in experimental evidence. Provides ground-truth validation for Robinson (2026a) through (2026b).",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Robinson, Michael Forsythe",
+        "affiliation": null
+      }
+    ],
+    "keywords": [
+      "incrementality testing",
+      "geo-lift experiments",
+      "synthetic control",
+      "causal inference",
+      "Difference-in-Differences",
+      "Bayesian structural time series",
+      "randomized experiments"
+    ],
+    "version": "2.0.0",
+    "license": "mit-license",
+    "imprint_publisher": "Zenodo",
+    "upload_type": "publication",
+    "publication_type": "report",
+    "prereserve_doi": {
+      "doi": "10.5281/zenodo.18860345",
+      "recid": 18860345
+    }
+  },
+  "title": "Incrementality Testing at Scale: Geo-Lift Experiments and Synthetic Control Methods",
+  "links": {
+    "self": "https://zenodo.org/api/records/18860345",
+    "html": "https://zenodo.org/records/18860345",
+    "doi": "https://doi.org/10.5281/zenodo.18860345",
+    "parent_doi": "https://doi.org/10.5281/zenodo.18859842",
+    "badge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.18860345.svg",
+    "conceptbadge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.18859842.svg",
+    "files": "https://zenodo.org/api/records/18860345/files",
+    "bucket": "https://zenodo.org/api/files/4764fcdf-0ef8-4a0c-9e94-4d0975bd5fd7",
+    "thumb250": "https://zenodo.org/record/18860345/thumb250",
+    "thumbs": {
+      "10": "https://zenodo.org/record/18860345/thumb10",
+      "50": "https://zenodo.org/record/18860345/thumb50",
+      "100": "https://zenodo.org/record/18860345/thumb100",
+      "250": "https://zenodo.org/record/18860345/thumb250",
+      "750": "https://zenodo.org/record/18860345/thumb750",
+      "1200": "https://zenodo.org/record/18860345/thumb1200"
+    },
+    "latest_draft": "https://zenodo.org/api/deposit/depositions/18860345",
+    "latest_draft_html": "https://zenodo.org/deposit/18860345",
+    "publish": "https://zenodo.org/api/deposit/depositions/18860345/actions/publish",
+    "edit": "https://zenodo.org/api/deposit/depositions/18860345/actions/edit",
+    "discard": "https://zenodo.org/api/deposit/depositions/18860345/actions/discard",
+    "newversion": "https://zenodo.org/api/deposit/depositions/18860345/actions/newversion",
+    "record": "https://zenodo.org/api/records/18860345",
+    "record_html": "https://zenodo.org/record/18860345",
+    "latest": "https://zenodo.org/api/records/18860345/versions/latest",
+    "latest_html": "https://zenodo.org/records/18860345/latest"
+  },
+  "record_id": 18860345,
+  "owner": 1541441,
+  "files": [
+    {
+      "id": "76a66dac-9fb1-4394-8395-f0b7f360f64a",
+      "filename": "Incrementality_Testing_Framework.pdf",
+      "filesize": 286075,
+      "checksum": "d0fbe3f8c76fcdaebb8a5fa3664717da",
+      "links": {
+        "self": "https://zenodo.org/api/records/18860345/files/76a66dac-9fb1-4394-8395-f0b7f360f64a",
+        "download": "https://zenodo.org/api/records/18860345/draft/files/Incrementality_Testing_Framework.pdf/content"
+      }
+    }
+  ],
+  "state": "done",
+  "submitted": true
+}

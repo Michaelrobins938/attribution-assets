@@ -5,11 +5,11 @@
 
 | **Attribute** | **Value** |
 |---|---|
-| Version | 1.0.0 |
-| Status | Draft |
-| Date | March 3, 2026 |
-| Classification | Marketing Science / Causal Inference |
-| Document Type | Technical Whitepaper |
+| **Version** | 1.0.0 |
+| **Status** | Production-Ready |
+| **Date** | March 3, 2026 |
+| **Classification** | Marketing Science / Causal Inference |
+| **Document Type** | Technical Whitepaper |
 
 ---
 
@@ -20,6 +20,26 @@ Media Mix Modeling (MMM) and Incrementality Testing represent two fundamentally 
 The framework addresses the critical pain point facing every major technology company: **how do we validate our $100M+ media spend recommendations?** We introduce novel algorithms for confidence interval overlap analysis, gap scoring, and testing prioritization. The result is a unified measurement system that combines the scalability of MMM with the validity of incrementality testing.
 
 We demonstrate the framework using synthetic experiments and show that it correctly identifies MMM misspecification in 94% of cases while reducing unnecessary incrementality testing by 60%.
+
+---
+
+## **Table of Contents**
+
+1. [Glossary & Notation](#glossary--notation)
+2. [The Critical Validation Problem](#1-the-critical-validation-problem)
+3. [Methodology: The Validation Bridge Framework](#2-methodology-the-validation-bridge-framework)
+4. [Validation Status Classification](#3-validation-status-classification)
+5. [Testing Prioritization Algorithm](#4-testing-prioritization-algorithm)
+6. [Integration with MMM](#5-integration-with-mmm)
+7. [Business Integration](#6-business-integration)
+8. [Technical Implementation](#7-technical-implementation)
+9. [Validation & Results](#8-validation--results)
+10. [Causal Interpretation & Limitations](#9-causal-interpretation--limitations)
+11. [Strategic Implementation Guide](#10-strategic-implementation-guide)
+12. [Conclusion](#11-conclusion)
+13. [Implementation Maturity Model](#12-implementation-maturity-model)
+14. [Worked Numerical Example](#13-worked-numerical-example)
+15. [Data Requirements & Minimum Viable Implementation](#14-data-requirements--minimum-viable-implementation)
 
 ---
 

@@ -1,0 +1,86 @@
+{
+  "created": "2026-03-04T08:29:21.401318+00:00",
+  "modified": "2026-03-04T08:29:21.819904+00:00",
+  "id": 18860338,
+  "conceptrecid": "18859836",
+  "doi": "10.5281/zenodo.18860338",
+  "conceptdoi": "10.5281/zenodo.18859836",
+  "doi_url": "https://doi.org/10.5281/zenodo.18860338",
+  "metadata": {
+    "title": "Probabilistic Identity Resolution: Cross-Device Attribution via Bayesian Graph Networks",
+    "doi": "10.5281/zenodo.18860338",
+    "publication_date": "2026-03-04",
+    "description": "Traditional attribution collapses at the identity layer \u2014 the same customer appears as dozens of anonymous profiles across devices, browsers, and sessions. This paper presents a probabilistic identity resolution framework using Bayesian graph networks with cross-device matching, deterministic anchoring, and privacy-preserving hashing. The framework achieves sub-second resolution at scale with explicit uncertainty quantification, enabling accurate multi-touch attribution across fragmented customer journeys. Complementary to Robinson (2026a) hybrid attribution and Robinson (2026b) media mix modeling.",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Robinson, Michael Forsythe",
+        "affiliation": null
+      }
+    ],
+    "keywords": [
+      "probabilistic identity resolution",
+      "cross-device attribution",
+      "Bayesian graph networks",
+      "identity graph",
+      "customer journey",
+      "privacy-preserving",
+      "multi-touch attribution"
+    ],
+    "version": "2.0.0",
+    "license": "mit-license",
+    "imprint_publisher": "Zenodo",
+    "upload_type": "publication",
+    "publication_type": "report",
+    "prereserve_doi": {
+      "doi": "10.5281/zenodo.18860338",
+      "recid": 18860338
+    }
+  },
+  "title": "Probabilistic Identity Resolution: Cross-Device Attribution via Bayesian Graph Networks",
+  "links": {
+    "self": "https://zenodo.org/api/records/18860338",
+    "html": "https://zenodo.org/records/18860338",
+    "doi": "https://doi.org/10.5281/zenodo.18860338",
+    "parent_doi": "https://doi.org/10.5281/zenodo.18859836",
+    "badge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.18860338.svg",
+    "conceptbadge": "https://zenodo.org/badge/doi/10.5281%2Fzenodo.18859836.svg",
+    "files": "https://zenodo.org/api/records/18860338/files",
+    "bucket": "https://zenodo.org/api/files/2bf0cb0c-5992-403e-9ced-25c19d8e6aa4",
+    "thumb250": "https://zenodo.org/record/18860338/thumb250",
+    "thumbs": {
+      "10": "https://zenodo.org/record/18860338/thumb10",
+      "50": "https://zenodo.org/record/18860338/thumb50",
+      "100": "https://zenodo.org/record/18860338/thumb100",
+      "250": "https://zenodo.org/record/18860338/thumb250",
+      "750": "https://zenodo.org/record/18860338/thumb750",
+      "1200": "https://zenodo.org/record/18860338/thumb1200"
+    },
+    "latest_draft": "https://zenodo.org/api/deposit/depositions/18860338",
+    "latest_draft_html": "https://zenodo.org/deposit/18860338",
+    "publish": "https://zenodo.org/api/deposit/depositions/18860338/actions/publish",
+    "edit": "https://zenodo.org/api/deposit/depositions/18860338/actions/edit",
+    "discard": "https://zenodo.org/api/deposit/depositions/18860338/actions/discard",
+    "newversion": "https://zenodo.org/api/deposit/depositions/18860338/actions/newversion",
+    "record": "https://zenodo.org/api/records/18860338",
+    "record_html": "https://zenodo.org/record/18860338",
+    "latest": "https://zenodo.org/api/records/18860338/versions/latest",
+    "latest_html": "https://zenodo.org/records/18860338/latest"
+  },
+  "record_id": 18860338,
+  "owner": 1541441,
+  "files": [
+    {
+      "id": "a9f291f2-2218-47a2-b284-4626a50f85cb",
+      "filename": "Probabilistic_Identity_Resolution.pdf",
+      "filesize": 296286,
+      "checksum": "9cc3f393b1c00fbabae11ae9062e4bf5",
+      "links": {
+        "self": "https://zenodo.org/api/records/18860338/files/a9f291f2-2218-47a2-b284-4626a50f85cb",
+        "download": "https://zenodo.org/api/records/18860338/draft/files/Probabilistic_Identity_Resolution.pdf/content"
+      }
+    }
+  ],
+  "state": "done",
+  "submitted": true
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "letter": "a",
+    "title": "A First-Principles Hybrid Attribution Framework",
+    "doi": "10.5281/zenodo.18557680"
+  },
+  {
+    "letter": "b",
+    "title": "Bayesian Media Mix Modeling: Axiomatic Budget Optimization",
+    "doi": "10.5281/zenodo.18599386"
+  },
+  {
+    "letter": "c",
+    "title": "Behavioral Profiling and Causal Uplift",
+    "doi": "10.5281/zenodo.18599425"
+  },
+  {
+    "letter": "d",
+    "title": "The Causal Calibration System",
+    "doi": "10.5281/zenodo.18599433"
+  },
+  {
+    "title": "Probabilistic Identity Resolution: Cross-Device Attribution via Bayesian Graph Networks",
+    "letter": "e",
+    "doi": "10.5281/zenodo.18859837",
+    "id": 18859837
+  },
+  {
+    "title": "Live Event Attribution: Real-Time Multi-Touch Modeling for High-Velocity Commerce",
+    "letter": "f",
+    "doi": "10.5281/zenodo.18859839",
+    "id": 18859839
+  },
+  {
+    "title": "Real-Time Streaming Attribution: Sub-Second Event Processing with Apache Kafka and Flink",
+    "letter": "g",
+    "doi": "10.5281/zenodo.18859841",
+    "id": 18859841
+  },
+  {
+    "title": "Incrementality Testing at Scale: Geo-Lift Experiments and Synthetic Control Methods",
+    "letter": "h",
+    "doi": "10.5281/zenodo.18859843",
+    "id": 18859843
+  },
+  {
+    "title": "Marketing Data Connectors: A Unified Integration Architecture for Multi-Platform Attribution",
+    "letter": "i",
+    "doi": "10.5281/zenodo.18859845",
+    "id": 18859845
+  },
+  {
+    "title": "The MMM-Incrementality Bridge: Reconciling Top-Down and Bottom-Up Attribution",
+    "letter": "j",
+    "doi": "10.5281/zenodo.18859847",
+    "id": 18859847
+  }
+]

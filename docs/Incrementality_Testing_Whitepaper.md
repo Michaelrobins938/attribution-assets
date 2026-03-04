@@ -19,6 +19,25 @@ Marketing attribution often confuses correlation with causation. This whitepaper
 
 ---
 
+## **Table of Contents**
+
+1. [Glossary & Notation](#glossary--notation)
+2. [The Flaw in Observation: Why We Need Experiments](#1-the-flaw-in-observation-why-we-need-experiments)
+3. [Methodology: Constructing the Counterfactual](#2-methodology-constructing-the-counterfactual)
+4. [Statistical Inference & Validity](#3-statistical-inference--validity)
+5. [Power Analysis: Preventing "Unclear" Results](#4-power-analysis-preventing-unclear-results)
+6. [Business Integration: The iROAS Metric](#5-business-integration-the-iroAs-metric)
+7. [Technical Implementation Specification](#6-technical-implementation-specification)
+8. [MMM-Incrementality Bridge Integration](#7-mmm-incrementality-bridge-integration)
+9. [Causal Interpretation & Limitations](#8-causal-interpretation--limitations)
+10. [Conclusion](#9-conclusion)
+11. [Strategic Implementation Guide](#10-strategic-implementation-guide)
+12. [Implementation Maturity Model](#11-implementation-maturity-model)
+13. [Worked Numerical Example](#12-worked-numerical-example)
+14. [Data Requirements & Minimum Viable Implementation](#13-data-requirements--minimum-viable-implementation)
+
+---
+
 ## **Glossary & Notation**
 
 | **Term** | **Definition** |

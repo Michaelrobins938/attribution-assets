@@ -19,6 +19,25 @@ Standard attribution models are batch-processed, creating a 24-48 hour feedback 
 
 ---
 
+## **Table of Contents**
+
+1. [Glossary & Notation](#glossary--notation)
+2. [The Latency Problem in Digital Marketing](#1-the-latency-problem-in-digital-marketing)
+3. [System Architecture: The Streaming Backbone](#2-system-architecture-the-streaming-backbone)
+4. [Anomaly Detection & Spike Alerts](#3-anomaly-detection--spike-alerts)
+5. [High-Availability & Consistency](#4-high-availability--consistency)
+6. [Metrics & Visualization](#5-metrics--visualization)
+7. [Technical Implementation Specification](#6-technical-implementation-specification)
+8. [Causal Interpretation & Limitations](#7-causal-interpretation--limitations)
+9. [Conclusion](#8-conclusion)
+10. [Strategic Implementation Guide](#9-strategic-implementation-guide)
+11. [Integration with Measurement Stack](#10-integration-with-measurement-stack)
+12. [Implementation Maturity Model](#11-implementation-maturity-model)
+13. [Worked Numerical Example](#12-worked-numerical-example)
+14. [Data Requirements & Minimum Viable Implementation](#13-data-requirements--minimum-viable-implementation)
+
+---
+
 ## **Glossary & Notation**
 
 | **Term** | **Definition** |

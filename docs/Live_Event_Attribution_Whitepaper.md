@@ -19,6 +19,25 @@ Live linear broadcasting (e.g., WWE Raw, Super Bowl, News) creates massive, shor
 
 ---
 
+## **Table of Contents**
+
+1. [Glossary & Notation](#glossary--notation)
+2. [The Broadcast Blind Spot](#1-the-broadcast-blind-spot)
+3. [Causal Architecture: Spike-Join Logic](#2-causal-architecture-spike-join-logic)
+4. [Statistical Significance: Z-Score Validation](#3-statistical-significance-z-score-validation)
+5. [Overlapping Ad Breaks](#4-overlapping-ad-breaks)
+6. [Key Performance Indicators (KPIs)](#5-key-performance-indicators-kpis)
+7. [Technical Implementation Specification](#6-technical-implementation-specification)
+8. [Causal Interpretation & Limitations](#7-causal-interpretation--limitations)
+9. [Conclusion](#8-conclusion)
+10. [Strategic Implementation Guide](#9-strategic-implementation-guide)
+11. [Integration with Measurement Stack](#10-integration-with-measurement-stack)
+12. [Implementation Maturity Model](#11-implementation-maturity-model)
+13. [Worked Numerical Example](#12-worked-numerical-example)
+14. [Data Requirements & Minimum Viable Implementation](#13-data-requirements--minimum-viable-implementation)
+
+---
+
 ## **Glossary & Notation**
 
 | **Term** | **Definition** |

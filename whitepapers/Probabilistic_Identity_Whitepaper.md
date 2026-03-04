@@ -19,6 +19,25 @@ In a multi-device, cookie-less world, customer journeys are fragmented across di
 
 ---
 
+## **Table of Contents**
+
+1. [Glossary & Notation](#glossary--notation)
+2. [The Fragmented Identity Crisis](#1-the-fragmented-identity-crisis)
+3. [System Architecture: The Multi-Layer Graph](#2-system-architecture-the-multi-layer-graph)
+4. [Linkage Logic & Weighting](#3-linkage-logic--weighting)
+5. [The "Household" vs. "Individual" Resolution](#4-the-household-vs-individual-resolution)
+6. [Privacy-First Design](#5-privacy-first-design)
+7. [Technical Implementation Specification](#6-technical-implementation-specification)
+8. [Causal Interpretation & Limitations](#7-causal-interpretation--limitations)
+9. [Conclusion](#8-conclusion)
+10. [Strategic Implementation Guide](#9-strategic-implementation-guide)
+11. [Integration with Measurement Stack](#10-integration-with-measurement-stack)
+12. [Implementation Maturity Model](#11-implementation-maturity-model)
+13. [Worked Numerical Example](#12-worked-numerical-example)
+14. [Data Requirements & Minimum Viable Implementation](#13-data-requirements--minimum-viable-implementation)
+
+---
+
 ## **Glossary & Notation**
 
 | **Term** | **Definition** |

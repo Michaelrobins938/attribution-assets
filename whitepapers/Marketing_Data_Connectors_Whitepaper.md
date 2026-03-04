@@ -5,11 +5,11 @@
 
 | **Attribute** | **Value** |
 |---|---|
-| Version | 1.0.0 |
-| Status | Draft |
-| Date | March 3, 2026 |
-| Classification | Data Engineering / API Architecture |
-| Document Type | Technical Whitepaper |
+| **Version** | 1.0.0 |
+| **Status** | Production-Ready |
+| **Date** | March 3, 2026 |
+| **Classification** | Data Engineering / API Architecture |
+| **Document Type** | Technical Whitepaper |
 
 ---
 
@@ -20,6 +20,28 @@ Modern marketing operates across a fragmented ecosystem of advertising platforms
 The architecture addresses the fundamental pain point of **data silos** by implementing a pluggable connector framework where each platform-specific adapter transforms heterogeneous APIs into a canonical data model. We detail the implementation of connectors for Google Ads, Meta Marketing API, Amazon DSP, and demonstrate integration with Media Mix Modeling and attribution systems.
 
 Our implementation reduces data aggregation time from weeks to minutes, eliminates manual errors, and enables real-time marketing dashboards that were previously impossible. The system processes over 10 million advertising events per hour with sub-100ms latency.
+
+---
+
+## **Table of Contents**
+
+1. [Glossary & Notation](#glossary--notation)
+2. [The Data Aggregation Crisis](#1-the-data-aggregation-crisis)
+3. [Architecture Overview](#2-architecture-overview)
+4. [Canonical Data Model](#3-canonical-data-model)
+5. [Platform Connectors](#4-platform-connectors)
+6. [Data Processing Pipeline](#5-data-processing-pipeline)
+7. [Integration with MMM and Attribution](#6-integration-with-mmm-and-attribution)
+8. [API Design](#7-api-design)
+9. [Authentication & Security](#8-authentication--security)
+10. [Performance & Scalability](#9-performance--scalability)
+11. [Business Impact](#10-business-impact)
+12. [Causal Interpretation & Limitations](#11-causal-interpretation--limitations)
+13. [Strategic Implementation Guide](#12-strategic-implementation-guide)
+14. [Conclusion](#13-conclusion)
+15. [Implementation Maturity Model](#14-implementation-maturity-model)
+16. [Worked Numerical Example](#15-worked-numerical-example)
+17. [Data Requirements & Minimum Viable Implementation](#16-data-requirements--minimum-viable-implementation)
 
 ---
 
@@ -505,7 +527,7 @@ Token stored securely, refreshed before expiry
 
 ---
 
-## **13. Strategic Implementation Guide**
+## **12. Strategic Implementation Guide**
 
 ### **13.1 The 5 Most Valuable Insights**
 
@@ -574,7 +596,7 @@ Token stored securely, refreshed before expiry
 
 ---
 
-## **14. Conclusion**
+## **13. Conclusion**
 
 The Unified Marketing Data Connector Architecture transforms marketing data infrastructure from a manual, error-prone bottleneck into an automated, reliable system. By implementing a pluggable connector framework with a canonical data model, organizations can:
 
@@ -589,7 +611,7 @@ This architecture is essential infrastructure for any organization serious about
 
 ---
 
-## **15. Implementation Maturity Model**
+## **14. Implementation Maturity Model**
 
 | Level | Name | Connectors Active | Data Freshness | Key Gap |
 |-------|------|------------------|----------------|---------|
@@ -610,7 +632,7 @@ This architecture is essential infrastructure for any organization serious about
 
 ---
 
-## **16. Worked Numerical Example**
+## **15. Worked Numerical Example**
 
 ### **Scenario: Unifying 5 Platform Reports — Before vs. After**
 
@@ -660,7 +682,7 @@ All platforms normalized to:
 
 ---
 
-## **17. Data Requirements & Minimum Viable Implementation**
+## **16. Data Requirements & Minimum Viable Implementation**
 
 ### **Tier 1 — Minimum Viable (Week 1–2)**
 
