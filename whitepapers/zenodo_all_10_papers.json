@@ -1,58 +1,102 @@
 [
   {
+    "part": "I",
     "letter": "a",
     "title": "A First-Principles Hybrid Attribution Framework",
-    "doi": "10.5281/zenodo.18557680"
+    "doi": "10.5281/zenodo.18557680",
+    "url": "https://doi.org/10.5281/zenodo.18557680",
+    "id": 18557680,
+    "version": "1.0.0",
+    "publication_date": "2026-01-21"
   },
   {
+    "part": "II",
     "letter": "b",
     "title": "Bayesian Media Mix Modeling: Axiomatic Budget Optimization",
-    "doi": "10.5281/zenodo.18599386"
+    "doi": "10.5281/zenodo.18599386",
+    "url": "https://doi.org/10.5281/zenodo.18599386",
+    "id": 18599386,
+    "version": "1.0.0",
+    "publication_date": "2026-02-10"
   },
   {
+    "part": "III",
     "letter": "c",
     "title": "Behavioral Profiling and Causal Uplift",
-    "doi": "10.5281/zenodo.18599425"
+    "doi": "10.5281/zenodo.18599425",
+    "url": "https://doi.org/10.5281/zenodo.18599425",
+    "id": 18599425,
+    "version": "1.0.0",
+    "publication_date": "2026-02-10"
   },
   {
+    "part": "IV",
     "letter": "d",
     "title": "The Causal Calibration System",
-    "doi": "10.5281/zenodo.18599433"
+    "doi": "10.5281/zenodo.18599433",
+    "url": "https://doi.org/10.5281/zenodo.18599433",
+    "id": 18599433,
+    "version": "1.0.0",
+    "publication_date": "2026-02-10"
   },
   {
-    "title": "Probabilistic Identity Resolution: Cross-Device Attribution via Bayesian Graph Networks",
+    "part": "V",
     "letter": "e",
-    "doi": "10.5281/zenodo.18859837",
-    "id": 18859837
+    "title": "Probabilistic Identity Resolution: Cross-Device Attribution via Bayesian Graph Networks",
+    "doi": "10.5281/zenodo.18860338",
+    "url": "https://doi.org/10.5281/zenodo.18860338",
+    "id": 18860338,
+    "version": "2.0.0",
+    "publication_date": "2026-03-04"
   },
   {
-    "title": "Live Event Attribution: Real-Time Multi-Touch Modeling for High-Velocity Commerce",
+    "part": "VI",
     "letter": "f",
-    "doi": "10.5281/zenodo.18859839",
-    "id": 18859839
+    "title": "Live Event Attribution: Real-Time Multi-Touch Modeling for High-Velocity Commerce",
+    "doi": "10.5281/zenodo.18860339",
+    "url": "https://doi.org/10.5281/zenodo.18860339",
+    "id": 18860339,
+    "version": "2.0.0",
+    "publication_date": "2026-03-04"
   },
   {
-    "title": "Real-Time Streaming Attribution: Sub-Second Event Processing with Apache Kafka and Flink",
+    "part": "VII",
     "letter": "g",
-    "doi": "10.5281/zenodo.18859841",
-    "id": 18859841
+    "title": "Real-Time Streaming Attribution: Sub-Second Event Processing with Apache Kafka and Flink",
+    "doi": "10.5281/zenodo.18860342",
+    "url": "https://doi.org/10.5281/zenodo.18860342",
+    "id": 18860342,
+    "version": "2.0.0",
+    "publication_date": "2026-03-04"
   },
   {
-    "title": "Incrementality Testing at Scale: Geo-Lift Experiments and Synthetic Control Methods",
+    "part": "VIII",
     "letter": "h",
-    "doi": "10.5281/zenodo.18859843",
-    "id": 18859843
+    "title": "Incrementality Testing at Scale: Geo-Lift Experiments and Synthetic Control Methods",
+    "doi": "10.5281/zenodo.18860345",
+    "url": "https://doi.org/10.5281/zenodo.18860345",
+    "id": 18860345,
+    "version": "2.0.0",
+    "publication_date": "2026-03-04"
   },
   {
-    "title": "Marketing Data Connectors: A Unified Integration Architecture for Multi-Platform Attribution",
+    "part": "IX",
     "letter": "i",
-    "doi": "10.5281/zenodo.18859845",
-    "id": 18859845
+    "title": "Marketing Data Connectors: A Unified Integration Architecture for Multi-Platform Attribution",
+    "doi": "10.5281/zenodo.18860349",
+    "url": "https://doi.org/10.5281/zenodo.18860349",
+    "id": 18860349,
+    "version": "2.0.0",
+    "publication_date": "2026-03-04"
   },
   {
-    "title": "The MMM-Incrementality Bridge: Reconciling Top-Down and Bottom-Up Attribution",
+    "part": "X",
     "letter": "j",
-    "doi": "10.5281/zenodo.18859847",
-    "id": 18859847
+    "title": "The MMM-Incrementality Bridge: Reconciling Top-Down and Bottom-Up Attribution",
+    "doi": "10.5281/zenodo.18860350",
+    "url": "https://doi.org/10.5281/zenodo.18860350",
+    "id": 18860350,
+    "version": "2.0.0",
+    "publication_date": "2026-03-04"
   }
 ]
