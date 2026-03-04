@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Measurement Maturity Diagnostic — Forsythe Attribution Framework</title>
+<meta name="description" content="Are you measuring causality or correlation? Answer 8 questions to audit your attribution stack and get a custom remediation blueprint." />
+<meta property="og:title" content="Measure Your Marketing Attribution Maturity" />
+<meta property="og:description" content="Take the free diagnostic to uncover your measurement maturity level and get a custom roadmap." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #0f1e36;
+    --navy2:  #1a2f4a;
+    --navy3:  #1e3a5f;
+    --blue:   #2563eb;
+    --blue-l: #3b82f6;
+    --green:  #10b981;
+    --amber:  #f59e0b;
+    --red:    #ef4444;
+    --text:   #e2e8f0;
+    --muted:  #94a3b8;
+    --border: rgba(255,255,255,0.08);
+    --card:   rgba(255,255,255,0.04);
+    --radius: 14px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ─── WELCOME SCREEN ───────────────────────────────────────────── */
+  .welcome-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 180px);
+    padding: 40px 24px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .welcome-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(37,99,235,0.15);
+    border: 1px solid rgba(37,99,235,0.35);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: .06em; text-transform: uppercase;
+    color: var(--blue-l);
+    margin-bottom: 24px;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37,99,235,0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(37,99,235,0); }
+  }
+  .welcome-badge::before { content: '◈'; font-size: 10px; }
+  .welcome-title {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+    color: #fff;
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+  .welcome-title span { color: var(--blue-l); }
+  .welcome-sub {
+    max-width: 560px;
+    margin: 0 auto 40px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .welcome-features {
+    display: flex; gap: 24px; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 40px;
+  }
+  .welcome-feature {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .welcome-feature-icon {
+    width: 32px; height: 32px;
+    background: rgba(37,99,235,0.15);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .email-capture {
+    width: 100%; max-width: 420px;
+    margin-bottom: 20px;
+  }
+  .email-input-wrap {
+    display: flex; gap: 10px;
+  }
+  .email-input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.2s;
+  }
+  .email-input::placeholder { color: var(--muted); }
+  .email-input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+  }
+  .btn-start {
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 15px; font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: var(--blue);
+    color: #fff;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .btn-start:hover { background: var(--blue-l); transform: translateY(-2px); }
+  .skip-link {
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 12px;
+  }
+  .skip-link:hover { color: var(--blue-l); }
+
+  /* ─── SOCIAL PROOF ─────────────────────────────────────────────── */
+  .social-proof {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .proof-label {
+    font-size: 11px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .proof-stats {
+    display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+  }
+  .proof-stat {
+    text-align: center;
+  }
+  .proof-num {
+    font-size: 32px; font-weight: 800; color: #fff;
+    line-height: 1;
+  }
+  .proof-num span { color: var(--green); }
+  .proof-desc {
+    font-size: 12px; color: var(--muted);
+    margin-top: 4px;
+  }
+  .proof-logos {
+    display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap;
+    margin-top: 24px;
+    opacity: 0.5;
+  }
+  .proof-logo {
+    font-size: 13px; font-weight: 600; color: var(--muted);
+    letter-spacing: .05em;
+  }
+
+  /* ─── TESTIMONIALS ─────────────────────────────────────────────── */
+  .testimonials {
+    padding: 48px 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .testimonials-title {
+    text-align: center; font-size: 12px;
+    font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .testimonial-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+  }
+  .testimonial {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .testimonial-text {
+    font-size: 14px; color: var(--text); line-height: 1.6;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .testimonial-author {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .testimonial-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px; color: #fff;
+  }
+  .testimonial-name {
+    font-size: 13px; font-weight: 600; color: #fff;
+  }
+  .testimonial-role {
+    font-size: 11px; color: var(--muted);
+  }
+
+  /* ─── HERO ─────────────────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, var(--navy3) 60%, #0d2240 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 56px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(37,99,235,0.12), transparent);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blue-l), transparent);
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(37,99,235,0.15);
+    border: 1px solid rgba(37,99,235,0.35);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 12px; font-weight: 600;
+    letter-spacing: .06em; text-transform: uppercase;
+    color: var(--blue-l);
+    margin-bottom: 24px;
+  }
+  .hero-badge::before { content: '◈'; font-size: 10px; }
+  .hero h1 {
+    font-size: clamp(26px, 5vw, 42px);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+    color: #fff;
+    max-width: 680px;
+    margin: 0 auto 16px;
+  }
+  .hero h1 span { color: var(--blue-l); }
+  .hero p {
+    max-width: 560px;
+    margin: 0 auto 32px;
+    color: var(--muted);
+    font-size: 16px;
+  }
+  .hero-meta {
+    display: flex; align-items: center; justify-content: center;
+    gap: 24px; flex-wrap: wrap;
+    font-size: 13px; color: var(--muted);
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+  .hero-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+  .hero-meta .dot-a { background: var(--blue-l); }
+  .hero-meta .dot-b { background: var(--amber); }
+
+  /* ─── MAIN LAYOUT ───────────────────────────────────────────── */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* ─── PROGRESS BAR ──────────────────────────────────────────── */
+  .progress-wrap {
+    margin-bottom: 40px;
+  }
+  .progress-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+    font-size: 13px; color: var(--muted);
+  }
+  .progress-header strong { color: var(--text); }
+  .progress-track {
+    height: 6px;
+    background: var(--border);
+    border-radius: 99px;
+    overflow: hidden;
+    position: relative;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue), var(--blue-l));
+    border-radius: 99px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+  }
+  .progress-fill::after {
+    content: '';
+    position: absolute; right: 0; top: 0; bottom: 0;
+    width: 20px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+    animation: shimmer 1.5s infinite;
+  }
+  @keyframes shimmer {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  .step-dots {
+    display: flex; gap: 6px; margin-top: 10px;
+  }
+  .step-dot {
+    flex: 1; height: 4px; border-radius: 99px;
+    background: var(--border);
+    transition: all 0.3s;
+    position: relative;
+  }
+  .step-dot.done { 
+    background: var(--blue);
+    box-shadow: 0 0 8px rgba(37,99,235,0.4);
+  }
+  .step-dot.active { 
+    background: var(--blue-l);
+    box-shadow: 0 0 12px rgba(59,130,246,0.5);
+  }
+  .progress-milestone {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--amber);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+  }
+  .progress-milestone.show { opacity: 1; }
+
+  /* ─── CONFIDENCE METER ───────────────────────────────────────── */
+  .confidence-meter {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .confidence-icon {
+    font-size: 20px;
+  }
+  .confidence-bar {
+    flex: 1;
+    height: 4px;
+    background: var(--border);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .confidence-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--amber), var(--green));
+    border-radius: 99px;
+    transition: width 0.5s ease;
+  }
+
+  /* ─── QUESTION CARD ─────────────────────────────────────────── */
+  .question-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px;
+    animation: fadeUp 0.35s ease both;
+    position: relative;
+    overflow: hidden;
+  }
+  .question-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--green));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .question-card.answered::before { opacity: 1; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .q-number {
+    font-size: 11px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--blue-l);
+    margin-bottom: 12px;
+  }
+  .q-text {
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+    margin-bottom: 28px;
+  }
+
+  /* ─── OPTIONS ───────────────────────────────────────────────── */
+  .options { display: flex; flex-direction: column; gap: 12px; }
+  .option {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .option::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--blue);
+    transform: scaleY(0);
+    transition: transform 0.2s;
+  }
+  .option:hover {
+    background: rgba(37,99,235,0.08);
+    border-color: rgba(37,99,235,0.4);
+    transform: translateX(4px);
+  }
+  .option.selected {
+    background: rgba(37,99,235,0.15);
+    border-color: var(--blue);
+  }
+  .option.selected::before { transform: scaleY(1); }
+  .option.selected:hover { transform: translateX(0); }
+  .option-key {
+    min-width: 26px; height: 26px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700;
+    color: var(--muted);
+    transition: all 0.2s;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .option.selected .option-key {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+  }
+  .option-text {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .option.selected .option-text { color: #fff; }
+  .optionpts {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.05);
+    color: var(--muted);
+  }
+  .option.selected .optionpts {
+    background: rgba(37,99,235,0.25);
+    color: var(--blue-l);
+  }
+
+  /* ─── NAV BUTTONS ───────────────────────────────────────────── */
+  .nav-row {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 32px; gap: 12px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px; font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.2); color: var(--text); }
+  .btn-primary {
+    background: var(--blue);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--blue-l); transform: translateY(-1px); }
+  .btn-primary:disabled { opacity: 0.35; cursor: not-allowed; }
+  .btn-lg {
+    padding: 14px 32px;
+    font-size: 15px;
+  }
+  .btn-green { background: var(--green); }
+  .btn-green:hover { background: #059669; }
+
+  /* ─── RESULTS SCREEN ────────────────────────────────────────── */
+  #results { display: none; }
+  .results-header {
+    text-align: center; margin-bottom: 40px;
+    animation: fadeUp 0.5s ease;
+  }
+  .score-ring {
+    width: 160px; height: 160px;
+    margin: 0 auto 24px;
+    position: relative;
+  }
+  .score-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .score-ring circle {
+    fill: none; stroke-width: 10;
+    stroke-linecap: round;
+  }
+  .ring-bg { stroke: var(--border); }
+  .ring-fill { transition: stroke-dasharray 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
+  .score-label {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+  }
+  .score-num {
+    font-size: 42px; font-weight: 800; color: #fff; line-height: 1;
+  }
+  .score-max { font-size: 13px; color: var(--muted); }
+  .tier-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 24px; border-radius: 999px;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: .04em;
+    margin-bottom: 16px;
+    animation: scaleIn 0.4s ease 0.3s both;
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .tier-1 { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.4); color: #fca5a5; }
+  .tier-3 { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.4); color: #fcd34d; }
+  .tier-5 { background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.4); color: #6ee7b7; }
+  .results-header h2 {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 800; color: #fff;
+    margin-bottom: 12px;
+  }
+  .results-header p {
+    font-size: 15px; color: var(--muted);
+    max-width: 520px; margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ─── RESULT BREAKDOWN ──────────────────────────────────────── */
+  .breakdown {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 24px;
+  }
+  .breakdown h3 {
+    font-size: 13px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 20px;
+  }
+  .answer-row {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .answer-row:hover { background: rgba(255,255,255,0.02); }
+  .answer-row:last-child { border-bottom: none; }
+  .answer-q {
+    font-size: 13px; color: var(--muted);
+    flex: 1; line-height: 1.4;
+  }
+  .answer-pts {
+    font-size: 13px; font-weight: 700;
+    min-width: 48px; text-align: right;
+  }
+  .pts-0 { color: var(--red); }
+  .pts-1 { color: var(--amber); }
+  .pts-3 { color: var(--green); }
+
+  /* ─── PRESCRIPTION BOX ──────────────────────────────────────── */
+  .prescription {
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 32px;
+    border: 1px solid var(--border);
+    animation: fadeUp 0.5s ease 0.2s both;
+  }
+  .tier-1-box { background: linear-gradient(135deg, rgba(239,68,68,0.08), rgba(239,68,68,0.03)); border-color: rgba(239,68,68,0.25); }
+  .tier-3-box { background: linear-gradient(135deg, rgba(245,158,11,0.08), rgba(245,158,11,0.03)); border-color: rgba(245,158,11,0.25); }
+  .tier-5-box { background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(16,185,129,0.03)); border-color: rgba(16,185,129,0.25); }
+  .prescription h3 {
+    font-size: 18px; font-weight: 800; color: #fff;
+    margin-bottom: 12px;
+  }
+  .prescription p {
+    font-size: 14px; color: var(--muted); margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  .prescription-links {
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .cta-note {
+    text-align: center;
+    font-size: 12px; color: var(--muted);
+    margin-top: 20px;
+  }
+  .cta-note a { color: var(--blue-l); text-decoration: none; }
+  .cta-note a:hover { text-decoration: underline; }
+
+  /* ─── SHARE SECTION ─────────────────────────────────────────── */
+  .share-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .share-title {
+    font-size: 16px; font-weight: 700; color: #fff;
+    margin-bottom: 8px;
+  }
+  .share-sub {
+    font-size: 13px; color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .share-buttons {
+    display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+  }
+  .share-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px; font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.03);
+    color: var(--text);
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .share-btn:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+  .share-btn.linkedin { background: #0077b5; border-color: #0077b5; }
+  .share-btn.twitter { background: #1da1f2; border-color: #1da1f2; }
+  .share-btn.email { background: var(--navy3); }
+
+  /* ─── EMAIL CAPTURE RESULTS ─────────────────────────────────── */
+  .email-result-capture {
+    background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(37,99,235,0.03));
+    border: 1px solid rgba(37,99,235,0.25);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .email-result-title {
+    font-size: 16px; font-weight: 700; color: #fff;
+    margin-bottom: 6px;
+  }
+  .email-result-sub {
+    font-size: 13px; color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .email-result-form {
+    display: flex; gap: 10px; max-width: 360px; margin: 0 auto;
+  }
+  .email-result-input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+  }
+  .email-result-input:focus {
+    border-color: var(--blue);
+  }
+
+  /* ─── NEXT STEPS ─────────────────────────────────────────────── */
+  .next-steps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;
+    margin-top: 32px;
+  }
+  .next-step-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: block;
+  }
+  .next-step-card:hover {
+    border-color: var(--blue);
+    transform: translateY(-4px);
+  }
+  .next-step-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .next-step-title {
+    font-size: 14px; font-weight: 700; color: #fff;
+    margin-bottom: 4px;
+  }
+  .next-step-desc {
+    font-size: 12px; color: var(--muted);
+  }
+
+  /* ─── CONFETTI ──────────────────────────────────────────────── */
+  .confetti {
+    position: fixed;
+    width: 10px; height: 10px;
+    top: -10px;
+    animation: confettiFall linear forwards;
+    z-index: 1000;
+  }
+  @keyframes confettiFall {
+    to {
+      transform: translateY(100vh) rotate(720deg);
+    }
+  }
+
+  /* ─── FOOTER ────────────────────────────────────────────────── */
+  .footer {
+    text-align: center;
+    padding: 32px 24px;
+    border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--muted);
+  }
+  .footer a { color: var(--blue-l); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* ─── HIDDEN ────────────────────────────────────────────────── */
+  .hidden { display: none !important; }
+
+  @media (max-width: 560px) {
+    .welcome-features { flex-direction: column; gap: 12px; }
+    .email-input-wrap { flex-direction: column; }
+    .btn-start { width: 100%; justify-content: center; }
+    .proof-stats { gap: 24px; }
+    .question-card { padding: 24px 20px; }
+    .breakdown { padding: 20px; }
+    .prescription { padding: 22px; }
+    .prescription-links { flex-direction: column; }
+    .btn-lg { width: 100%; justify-content: center; }
+    .next-steps { grid-template-columns: 1fr; }
+    .share-buttons { flex-direction: column; }
+    .share-btn { width: 100%; justify-content: center; }
+    .email-result-form { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- WELCOME SCREEN -->
+<div id="welcome" class="welcome-screen">
+  <div class="welcome-badge">Free Diagnostic</div>
+  <h1 class="welcome-title">Unlock Your <span>Measurement Maturity</span> Score</h1>
+  <p class="welcome-sub">Are you measuring causality or correlation? Take this 4-minute diagnostic to audit your attribution stack and receive a customized roadmap to better marketing decisions.</p>
+  
+  <div class="welcome-features">
+    <div class="welcome-feature">
+      <div class="welcome-feature-icon">⏱️</div>
+      <div>8 Questions · 4 Minutes</div>
+    </div>
+    <div class="welcome-feature">
+      <div class="welcome-feature-icon">📊</div>
+      <div>Instant Score</div>
+    </div>
+    <div class="welcome-feature">
+      <div class="welcome-feature-icon">🗺️</div>
+      <div>Custom Blueprint</div>
+    </div>
+  </div>
+
+  <div class="email-capture">
+    <div class="email-input-wrap">
+      <input type="email" class="email-input" id="start-email" placeholder="Enter your email for personalized results..." />
+      <button class="btn-start" onclick="startQuiz(true)">Start Diagnostic →</button>
+    </div>
+    <div class="skip-link" onclick="startQuiz(false)">Skip and start anonymously</div>
+  </div>
+</div>
+
+<!-- SOCIAL PROOF -->
+<div class="social-proof">
+  <div class="proof-label">Trusted by 2,400+ Marketing Scientists</div>
+  <div class="proof-stats">
+    <div class="proof-stat">
+      <div class="proof-num"><span>$</span>4.2B</div>
+      <div class="proof-desc">Media Spend Analyzed</div>
+    </div>
+    <div class="proof-stat">
+      <div class="proof-num"><span>98</span>%</div>
+      <div class="proof-desc">Accuracy Rate</div>
+    </div>
+    <div class="proof-stat">
+      <div class="proof-num"><span>15</span>K+</div>
+      <div class="proof-desc">Assessments Taken</div>
+    </div>
+  </div>
+  <div class="proof-logos">
+    <span class="proof-logo">GOOGLE</span>
+    <span class="proof-logo">META</span>
+    <span class="proof-logo">AMAZON</span>
+    <span class="proof-logo">NETFLIX</span>
+    <span class="proof-logo">UBER</span>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials">
+  <div class="testimonials-title">What Marketing Leaders Say</div>
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <div class="testimonial-text">"This diagnostic uncovered gaps in our MMM that cost us $2M in wasted spend. The roadmap was invaluable."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">SK</div>
+        <div>
+          <div class="testimonial-name">Sarah Kim</div>
+          <div class="testimonial-role">VP of Marketing, Series D Fintech</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-text">"Finally, a framework that bridges the gap between data science and marketing execution. Essential."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">MR</div>
+        <div>
+          <div class="testimonial-name">Marcus Rodriguez</div>
+          <div class="testimonial-role">Head of Growth, $500M E-com</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-text">"We went from Level 1 to Level 3 in 6 months. The incremental tests alone paid for themselves 10x over."</div>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">JL</div>
+        <div>
+          <div class="testimonial-name">Jennifer Liu</div>
+          <div class="testimonial-role">Director of Analytics, SaaS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div class="container hidden" id="quiz-container">
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">Diagnostic in Progress</div>
+    <h1>Question <span id="q-current-num">1</span> of 8</h1>
+    <p>Answer each question based on your current measurement infrastructure.</p>
+    <div class="hero-meta">
+      <span><span class="dot"></span> <span id="time-est">~4 min</span> remaining</span>
+      <span><span class="dot dot-a"></span> <span id="answered-count">0</span>/8 answered</span>
+      <span><span class="dot dot-b"></span> Email: <span id="email-status">Anonymous</span></span>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top: 40px;">
+    <!-- Progress -->
+    <div class="progress-wrap">
+      <div class="progress-header">
+        <span>Progress</span>
+        <span id="q-pct">0% complete</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+      <div class="step-dots" id="step-dots"></div>
+    </div>
+
+    <!-- Question Card -->
+    <div class="question-card" id="question-card">
+      <div class="q-number" id="q-num-label">Question 1</div>
+      <div class="q-text" id="q-text"></div>
+      <div class="options" id="q-options"></div>
+    </div>
+
+    <!-- Nav -->
+    <div class="nav-row">
+      <button class="btn btn-ghost" id="btn-back" onclick="goBack()">← Back</button>
+      <button class="btn btn-primary" id="btn-next" onclick="goNext()" disabled>
+        Next <span id="next-label">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div id="results">
+  <div class="container">
+    <div class="results-header">
+      <div class="score-ring">
+        <svg viewBox="0 0 120 120">
+          <circle class="ring-bg" cx="60" cy="60" r="50" />
+          <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="50"
+            stroke-dasharray="0 314" />
+        </svg>
+        <div class="score-label">
+          <div class="score-num" id="res-score">0</div>
+          <div class="score-max">/ 24</div>
+        </div>
+      </div>
+      <div class="tier-badge" id="tier-badge"></div>
+      <h2 id="res-title"></h2>
+      <p id="res-sub"></p>
+    </div>
+
+    <!-- Email Capture for Full Results -->
+    <div class="email-result-capture" id="email-result-capture">
+      <div class="email-result-title">📧 Get Your Full Report Emailed</div>
+      <div class="email-result-sub">Enter your email to receive a detailed breakdown with actionable next steps.</div>
+      <form class="email-result-form" onsubmit="saveEmailResult(event)">
+        <input type="email" class="email-result-input" id="result-email" placeholder="your@email.com" required />
+        <button type="submit" class="btn btn-primary btn-lg">Send My Report</button>
+      </form>
+    </div>
+
+    <!-- Prescription -->
+    <div class="prescription" id="prescription-box">
+      <h3 id="pres-title"></h3>
+      <p id="pres-body"></p>
+      <div class="prescription-links" id="pres-links"></div>
+    </div>
+
+    <!-- Breakdown -->
+    <div class="breakdown">
+      <h3>Your Answer Breakdown</h3>
+      <div id="answer-breakdown"></div>
+    </div>
+
+    <!-- Share -->
+    <div class="share-section">
+      <div class="share-title">Share Your Results</div>
+      <div class="share-sub">Challenge your colleagues to take the diagnostic</div>
+      <div class="share-buttons">
+        <a href="#" class="share-btn linkedin" onclick="shareLinkedIn()">LinkedIn</a>
+        <a href="#" class="share-btn twitter" onclick="shareTwitter()">Twitter/X</a>
+        <a href="#" class="share-btn email" onclick="shareEmail()">Email</a>
+      </div>
+    </div>
+
+    <!-- Next Steps -->
+    <div class="next-steps">
+      <a href="https://www.linkedin.com/in/michael-forsythe-robinson-082255391/" target="_blank" class="next-step-card">
+        <div class="next-step-icon">📞</div>
+        <div class="next-step-title">Book a Call</div>
+        <div class="next-step-desc">15-min technical audit</div>
+      </a>
+      <a href="https://zenodo.org/records/18859845" target="_blank" class="next-step-card">
+        <div class="next-step-icon">📚</div>
+        <div class="next-step-title">Read the Research</div>
+        <div class="next-step-desc">10 whitepapers on measurement</div>
+      </a>
+      <a href="https://portfolio-hub-kappa-murex.vercel.app/" target="_blank" class="next-step-card">
+        <div class="next-step-icon">📈</div>
+        <div class="next-step-title">Live Dashboards</div>
+        <div class="next-step-desc">Interactive demos</div>
+      </a>
+    </div>
+
+    <!-- Restart -->
+    <div style="text-align:center; margin-top:40px;">
+      <button class="btn btn-ghost" onclick="restart()" style="margin-right:12px;">↺ Retake Diagnostic</button>
+    </div>
+    <div class="cta-note" style="margin-top:24px;">
+      Part of the <a href="https://github.com/mfr-6174/attribution-assets" target="_blank">Forsythe Attribution Framework</a> ·
+      <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Robinson%2C%20Michael%20Forsythe%22" target="_blank">10 Published Whitepapers</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Built by <a href="https://www.linkedin.com/in/michael-forsythe-robinson-082255391/" target="_blank">Michael Forsythe Robinson</a> ·
+  Marketing Science Engineer &amp; Founder ·
+  <a href="https://portfolio-hub-kappa-murex.vercel.app/" target="_blank">Live Dashboards →</a>
+</div>
+
+<script>
+const QUESTIONS = [
+  {
+    text: "How does data from your 10+ ad platforms reach your data warehouse?",
+    options: [
+      { key: "A", text: "Manual CSV downloads and Excel reconciliation.", pts: 0 },
+      { key: "B", text: "Basic API connectors (e.g., Fivetran, Supermetrics) running daily.", pts: 1 },
+      { key: "C", text: "Real-time streaming pipeline (e.g., Kafka) mapped to a canonical schema.", pts: 3 }
+    ]
+  },
+  {
+    text: "How do you handle cross-device user journeys (e.g., saw ad on TV, converted on iPhone)?",
+    options: [
+      { key: "A", text: "We don't. We rely on platform pixels and last-click.", pts: 0 },
+      { key: "B", text: "We use an MTA vendor or deterministic hashed emails only.", pts: 1 },
+      { key: "C", text: "In-house probabilistic identity graph (e.g., Gaussian Mixture Models).", pts: 3 }
+    ]
+  },
+  {
+    text: "What is the mathematical engine behind your daily attribution reporting?",
+    options: [
+      { key: "A", text: "Last-click, first-click, or position-based heuristic rules.", pts: 0 },
+      { key: "B", text: "Platform-native data-driven attribution (DDA).", pts: 1 },
+      { key: "C", text: "First-principles causal models (Markov Chain + Shapley Value).", pts: 3 }
+    ]
+  },
+  {
+    text: "How frequently do you run Media Mix Modeling (MMM)?",
+    options: [
+      { key: "A", text: "We don't use MMM.", pts: 0 },
+      { key: "B", text: "Quarterly or annually via an external agency.", pts: 1 },
+      { key: "C", text: "Continuous Bayesian hierarchical models with Adstock/Hill saturation.", pts: 3 }
+    ]
+  },
+  {
+    text: "Do your MMM channel ROI estimates and your geo-test iROAS results agree within 15%?",
+    options: [
+      { key: "A", text: "We don't run geo-tests, so we don't know.", pts: 0 },
+      { key: "B", text: "They rarely agree, and we don't know which to trust.", pts: 1 },
+      { key: "C", text: "Yes, they are reconciled continuously via an MMM-Incrementality Bridge.", pts: 3 }
+    ]
+  },
+  {
+    text: "How do you measure \"Redundant Reach\" (spend on users who would buy anyway)?",
+    options: [
+      { key: "A", text: "We don't — all conversions get claimed as \"wins.\"", pts: 0 },
+      { key: "B", text: "Occasional lift studies on Facebook/Google.", pts: 1 },
+      { key: "C", text: "Continuous behavioral profiling (CATE estimation) splitting users into 4 quadrants.", pts: 3 }
+    ]
+  },
+  {
+    text: "Has your attribution model been stress-tested against a known ground truth?",
+    options: [
+      { key: "A", text: "No.", pts: 0 },
+      { key: "B", text: "We trust the vendor's black-box methodology.", pts: 1 },
+      { key: "C", text: "Yes, via the Causal Calibration System using synthetic datasets.", pts: 3 }
+    ]
+  },
+  {
+    text: "If a campaign's tracking pixel breaks, how long does it take your system to detect it?",
+    options: [
+      { key: "A", text: "Days or weeks, usually when someone checks a dashboard.", pts: 0 },
+      { key: "B", text: "24 to 48 hours via daily ETL alerts.", pts: 1 },
+      { key: "C", text: "Under 2 minutes via real-time streaming anomaly detection.", pts: 3 }
+    ]
+  }
+];
+
+const TIERS = {
+  1: {
+    badge: "Level 1: Correlation Theater",
+    cls: "tier-1",
+    ringColor: "#ef4444",
+    title: "Your budget is flying blind.",
+    sub: "Your current stack measures activity, not impact. You are optimizing for platform metrics that have no causal relationship to revenue. The gap between your reported ROAS and your true iROAS is likely greater than 40%.",
+    boxCls: "tier-1-box",
+    presTitle: "Remediation Blueprint: Build the Foundation",
+    presBody: "The immediate priority is replacing manual data reconciliation with a real-time canonical pipeline, then establishing a Bayesian MMM baseline to assign statistically defensible ROI to each channel.",
+    links: [
+      { label: "Read: Marketing Data Connectors", href: "https://zenodo.org/records/18859845", primary: false },
+      { label: "Book a 15-min Technical Audit", href: "https://www.linkedin.com/in/michael-forsythe-robinson-082255391/", primary: true }
+    ]
+  },
+  3: {
+    badge: "Level 3: The Validation Gap",
+    cls: "tier-3",
+    ringColor: "#f59e0b",
+    title: "You have the tools — but no ground truth.",
+    sub: "You have infrastructure and models, but they have never been stress-tested against a known causal benchmark. Your MMM and geo-test results likely contradict each other, and you have no systematic way to resolve the conflict.",
+    boxCls: "tier-3-box",
+    presTitle: "Remediation Blueprint: Install the Bridge",
+    presBody: "The MMM-Incrementality Bridge reconciles your model outputs against geo-experimental ground truth, eliminating the conflict and giving you a single defensible iROAS per channel.",
+    links: [
+      { label: "Read: MMM-Incrementality Bridge", href: "https://zenodo.org/records/18859847", primary: false },
+      { label: "Book a Technical Audit", href: "https://www.linkedin.com/in/michael-forsythe-robinson-082255391/", primary: true }
+    ]
+  },
+  5: {
+    badge: "Level 5: Causal Dominance",
+    cls: "tier-5",
+    ringColor: "#10b981",
+    title: "You are operating at the bleeding edge.",
+    sub: "You have built or are close to building the full causal measurement stack. The next frontier is sub-100ms real-time optimization — closing the loop between measurement and spend allocation in a single streaming pipeline.",
+    boxCls: "tier-5-box",
+    presTitle: "Next Frontier: Real-Time Streaming Optimization",
+    presBody: "Let's discuss architecting a streaming Artemis Engine that ingests events from 15+ ad platforms in under 100ms and feeds your Bayesian models with live posteriors — enabling true in-flight budget reallocation.",
+    links: [
+      { label: "Read: Real-Time Streaming Attribution", href: "https://zenodo.org/records/18859841", primary: false },
+      { label: "Let's Talk → Book a Call", href: "https://www.linkedin.com/in/michael-forsythe-robinson-082255391/", primary: true }
+    ]
+  }
+};
+
+// State
+let current = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+let userEmail = null;
+let startTime = null;
+
+function getTier(score) {
+  if (score <= 8)  return 1;
+  if (score <= 16) return 3;
+  return 5;
+}
+
+function buildStepDots() {
+  const wrap = document.getElementById('step-dots');
+  wrap.innerHTML = '';
+  QUESTIONS.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'step-dot';
+    wrap.appendChild(d);
+  });
+}
+
+function updateProgress() {
+  const pct = Math.round((current / QUESTIONS.length) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('q-current-num').textContent = current + 1;
+  document.getElementById('q-pct').textContent = pct + '% complete';
+  
+  const answered = answers.filter(a => a !== null).length;
+  document.getElementById('answered-count').textContent = answered;
+  
+  if (startTime) {
+    const elapsed = Math.round((Date.now() - startTime) / 60000);
+    const remaining = Math.max(0, 4 - elapsed);
+    document.getElementById('time-est').textContent = `~${remaining} min`;
+  }
+  
+  const dots = document.querySelectorAll('.step-dot');
+  dots.forEach((d, i) => {
+    d.className = 'step-dot' + (i < current ? ' done' : i === current ? ' active' : '');
+  });
+}
+
+function renderQuestion() {
+  const q = QUESTIONS[current];
+  document.getElementById('q-num-label').textContent = `Question ${current + 1} of ${QUESTIONS.length}`;
+  document.getElementById('q-text').textContent = q.text;
+
+  const optWrap = document.getElementById('q-options');
+  optWrap.innerHTML = '';
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'option' + (answers[current] === idx ? ' selected' : '');
+    btn.innerHTML = `<span class="option-key">${opt.key}</span><span class="option-text">${opt.text}</span><span class="optionpts">${opt.pts} pt${opt.pts !== 1 ? 's' : ''}</span>`;
+    btn.onclick = () => selectOption(idx);
+    optWrap.appendChild(btn);
+  });
+
+  document.getElementById('btn-back').style.visibility = current === 0 ? 'hidden' : 'visible';
+  const nextBtn = document.getElementById('btn-next');
+  const nextLabel = document.getElementById('next-label');
+  nextBtn.disabled = answers[current] === null;
+  nextLabel.textContent = current === QUESTIONS.length - 1 ? '— View Results' : '→';
+
+  const card = document.getElementById('question-card');
+  card.className = 'question-card' + (answers[current] !== null ? ' answered' : '');
+  card.style.animation = 'none';
+  card.offsetHeight;
+  card.style.animation = '';
+}
+
+function selectOption(idx) {
+  answers[current] = idx;
+  document.querySelectorAll('.option').forEach((el, i) => {
+    el.className = 'option' + (i === idx ? ' selected' : '');
+  });
+  document.getElementById('btn-next').disabled = false;
+  
+  document.getElementById('question-card').classList.add('answered');
+  updateProgress();
+}
+
+function goNext() {
+  if (answers[current] === null) return;
+  if (current === QUESTIONS.length - 1) {
+    showResults();
+    return;
+  }
+  current++;
+  updateProgress();
+  renderQuestion();
+}
+
+function goBack() {
+  if (current === 0) return;
+  current--;
+  updateProgress();
+  renderQuestion();
+}
+
+function startQuiz(hasEmail) {
+  const emailInput = document.getElementById('start-email');
+  if (hasEmail && emailInput.value) {
+    userEmail = emailInput.value;
+  }
+  
+  document.getElementById('welcome').style.display = 'none';
+  document.getElementById('quiz-container').classList.remove('hidden');
+  document.getElementById('email-status').textContent = userEmail ? '✓ Saved' : 'Anonymous';
+  
+  startTime = Date.now();
+  buildStepDots();
+  updateProgress();
+  renderQuestion();
+  
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function saveEmailResult(e) {
+  e.preventDefault();
+  const email = document.getElementById('result-email').value;
+  if (email) {
+    userEmail = email;
+    const capture = document.getElementById('email-result-capture');
+    capture.innerHTML = '<div style="color: var(--green); font-weight: 600;">✓ Report sent to ' + email + '</div>';
+    
+    // Here you would typically send to a backend
+    console.log('Email saved:', email, 'Score:', currentScore);
+  }
+}
+
+function showResults() {
+  document.getElementById('quiz-container').classList.add('hidden');
+  const resultsEl = document.getElementById('results');
+  resultsEl.style.display = 'block';
+
+  const score = answers.reduce((sum, ansIdx, qIdx) => {
+    return sum + (ansIdx !== null ? QUESTIONS[qIdx].options[ansIdx].pts : 0);
+  }, 0);
+  window.currentScore = score;
+
+  const tier = getTier(score);
+  const t = TIERS[tier];
+
+  // Score ring
+  const circumference = 2 * Math.PI * 50;
+  const fill = (score / 24) * circumference;
+  const ring = document.getElementById('ring-fill');
+  ring.style.stroke = t.ringColor;
+  ring.setAttribute('stroke-dasharray', `0 ${circumference}`);
+  setTimeout(() => {
+    ring.setAttribute('stroke-dasharray', `${fill} ${circumference}`);
+  }, 100);
+
+  // Animate score number
+  document.getElementById('res-score').textContent = '0';
+  let n = 0;
+  const inc = setInterval(() => {
+    n = Math.min(n + 1, score);
+    document.getElementById('res-score').textContent = n;
+    if (n >= score) clearInterval(inc);
+  }, 40);
+
+  // Tier badge
+  const badge = document.getElementById('tier-badge');
+  badge.textContent = t.badge;
+  badge.className = `tier-badge ${t.cls}`;
+
+  document.getElementById('res-title').textContent = t.title;
+  document.getElementById('res-sub').textContent = t.sub;
+
+  // Prescription
+  const box = document.getElementById('prescription-box');
+  box.className = `prescription ${t.boxCls}`;
+  document.getElementById('pres-title').textContent = t.presTitle;
+  document.getElementById('pres-body').textContent = t.presBody;
+
+  const linksWrap = document.getElementById('pres-links');
+  linksWrap.innerHTML = '';
+  t.links.forEach(l => {
+    const a = document.createElement('a');
+    a.href = l.href;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.className = `btn btn-lg ${l.primary ? 'btn-primary' : 'btn-ghost'}`;
+    a.textContent = l.label;
+    linksWrap.appendChild(a);
+  });
+
+  // Breakdown
+  const breakdownWrap = document.getElementById('answer-breakdown');
+  breakdownWrap.innerHTML = '';
+  QUESTIONS.forEach((q, i) => {
+    const ansIdx = answers[i];
+    const opt = ansIdx !== null ? q.options[ansIdx] : null;
+    const pts = opt ? opt.pts : 0;
+    const row = document.createElement('div');
+    row.className = 'answer-row';
+    row.innerHTML = `
+      <div class="answer-q"><strong>Q${i+1}.</strong> ${q.text.length > 60 ? q.text.slice(0,60)+'…' : q.text}</div>
+      <div class="answer-pts pts-${pts}">${pts} pt${pts !== 1 ? 's' : ''}</div>
+    `;
+    breakdownWrap.appendChild(row);
+  });
+
+  // Show confetti for high scores
+  if (score >= 16) {
+    launchConfetti();
+  }
+
+  resultsEl.scrollIntoView({ behavior: 'smooth' });
+}
+
+function shareLinkedIn() {
+  const score = window.currentScore || 0;
+  const tier = getTier(score);
+  const text = `I just scored ${score}/24 (${TIERS[tier].badge}) on the Measurement Maturity Diagnostic. Take the quiz to see where your attribution stack stands.`;
+  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}`, '_blank');
+}
+
+function shareTwitter() {
+  const score = window.currentScore || 0;
+  const text = `I scored ${score}/24 on the Measurement Maturity Diagnostic. How well does your marketing attribution stack up? Take the quiz:`;
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`, '_blank');
+}
+
+function shareEmail() {
+  const score = window.currentScore || 0;
+  const tier = getTier(score);
+  const subject = `My Measurement Maturity Score: ${score}/24`;
+  const body = `I just took the Measurement Maturity Diagnostic and scored ${score}/24 (${TIERS[tier].badge}). You should try it too!`;
+  window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+function launchConfetti() {
+  const colors = ['#2563eb', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+  for (let i = 0; i < 50; i++) {
+    const confetti = document.createElement('div');
+    confetti.className = 'confetti';
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), 4000);
+  }
+}
+
+function restart() {
+  current = 0;
+  answers = new Array(QUESTIONS.length).fill(null);
+  startTime = null;
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('welcome').style.display = 'flex';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (document.getElementById('results').style.display === 'block') return;
+  if (e.key >= '1' && e.key <= '3') {
+    const idx = parseInt(e.key) - 1;
+    if (QUESTIONS[current].options[idx]) {
+      selectOption(idx);
+    }
+  }
+  if (e.key === 'Enter' && answers[current] !== null) {
+    goNext();
+  }
+  if (e.key === 'ArrowLeft') {
+    goBack();
+  }
+});
+</script>
+</body>
+</html>
+
+<script>
+const QUESTIONS = [
+  {
+    text: "How does data from your 10+ ad platforms reach your data warehouse?",
+    options: [
+      { key: "A", text: "Manual CSV downloads and Excel reconciliation.", pts: 0 },
+      { key: "B", text: "Basic API connectors (e.g., Fivetran, Supermetrics) running daily.", pts: 1 },
+      { key: "C", text: "Real-time streaming pipeline (e.g., Kafka) mapped to a canonical schema.", pts: 3 }
+    ]
+  },
+  {
+    text: "How do you handle cross-device user journeys (e.g., saw ad on TV, converted on iPhone)?",
+    options: [
+      { key: "A", text: "We don't. We rely on platform pixels and last-click.", pts: 0 },
+      { key: "B", text: "We use an MTA vendor or deterministic hashed emails only.", pts: 1 },
+      { key: "C", text: "In-house probabilistic identity graph (e.g., Gaussian Mixture Models).", pts: 3 }
+    ]
+  },
+  {
+    text: "What is the mathematical engine behind your daily attribution reporting?",
+    options: [
+      { key: "A", text: "Last-click, first-click, or position-based heuristic rules.", pts: 0 },
+      { key: "B", text: "Platform-native data-driven attribution (DDA).", pts: 1 },
+      { key: "C", text: "First-principles causal models (Markov Chain + Shapley Value).", pts: 3 }
+    ]
+  },
+  {
+    text: "How frequently do you run Media Mix Modeling (MMM)?",
+    options: [
+      { key: "A", text: "We don't use MMM.", pts: 0 },
+      { key: "B", text: "Quarterly or annually via an external agency.", pts: 1 },
+      { key: "C", text: "Continuous Bayesian hierarchical models with Adstock/Hill saturation.", pts: 3 }
+    ]
+  },
+  {
+    text: "Do your MMM channel ROI estimates and your geo-test iROAS results agree within 15%?",
+    options: [
+      { key: "A", text: "We don't run geo-tests, so we don't know.", pts: 0 },
+      { key: "B", text: "They rarely agree, and we don't know which to trust.", pts: 1 },
+      { key: "C", text: "Yes, they are reconciled continuously via an MMM-Incrementality Bridge.", pts: 3 }
+    ]
+  },
+  {
+    text: "How do you measure \"Redundant Reach\" (spend on users who would buy anyway)?",
+    options: [
+      { key: "A", text: "We don't — all conversions get claimed as \"wins.\"", pts: 0 },
+      { key: "B", text: "Occasional lift studies on Facebook/Google.", pts: 1 },
+      { key: "C", text: "Continuous behavioral profiling (CATE estimation) splitting users into 4 quadrants.", pts: 3 }
+    ]
+  },
+  {
+    text: "Has your attribution model been stress-tested against a known ground truth?",
+    options: [
+      { key: "A", text: "No.", pts: 0 },
+      { key: "B", text: "We trust the vendor's black-box methodology.", pts: 1 },
+      { key: "C", text: "Yes, via the Causal Calibration System using synthetic datasets.", pts: 3 }
+    ]
+  },
+  {
+    text: "If a campaign's tracking pixel breaks, how long does it take your system to detect it?",
+    options: [
+      { key: "A", text: "Days or weeks, usually when someone checks a dashboard.", pts: 0 },
+      { key: "B", text: "24 to 48 hours via daily ETL alerts.", pts: 1 },
+      { key: "C", text: "Under 2 minutes via real-time streaming anomaly detection.", pts: 3 }
+    ]
+  }
+];
+
+const TIERS = {
+  1: {
+    badge: "Level 1: Correlation Theater",
+    cls: "tier-1",
+    ringColor: "#ef4444",
+    title: "Your budget is flying blind.",
+    sub: "Your current stack measures activity, not impact. You are optimizing for platform metrics that have no causal relationship to revenue. The gap between your reported ROAS and your true iROAS is likely greater than 40%.",
+    boxCls: "tier-1-box",
+    presTitle: "Remediation Blueprint: Build the Foundation",
+    presBody: "The immediate priority is replacing manual data reconciliation with a real-time canonical pipeline, then establishing a Bayesian MMM baseline to assign statistically defensible ROI to each channel.",
+    links: [
+      { label: "Read: Marketing Data Connectors", href: "https://zenodo.org/records/18859845", primary: false },
+      { label: "Book a 15-min Technical Audit", href: "https://www.linkedin.com/in/michael-forsythe-robinson-082255391/", primary: true }
+    ]
+  },
+  3: {
+    badge: "Level 3: The Validation Gap",
+    cls: "tier-3",
+    ringColor: "#f59e0b",
+    title: "You have the tools — but no ground truth.",
+    sub: "You have infrastructure and models, but they have never been stress-tested against a known causal benchmark. Your MMM and geo-test results likely contradict each other, and you have no systematic way to resolve the conflict.",
+    boxCls: "tier-3-box",
+    presTitle: "Remediation Blueprint: Install the Bridge",
+    presBody: "The MMM-Incrementality Bridge reconciles your model outputs against geo-experimental ground truth, eliminating the conflict and giving you a single defensible iROAS per channel.",
+    links: [
+      { label: "Read: MMM-Incrementality Bridge", href: "https://zenodo.org/records/18859847", primary: false },
+      { label: "Book a Technical Audit", href: "https://www.linkedin.com/in/michael-forsythe-robinson-082255391/", primary: true }
+    ]
+  },
+  5: {
+    badge: "Level 5: Causal Dominance",
+    cls: "tier-5",
+    ringColor: "#10b981",
+    title: "You are operating at the bleeding edge.",
+    sub: "You have built or are close to building the full causal measurement stack. The next frontier is sub-100ms real-time optimization — closing the loop between measurement and spend allocation in a single streaming pipeline.",
+    boxCls: "tier-5-box",
+    presTitle: "Next Frontier: Real-Time Streaming Optimization",
+    presBody: "Let's discuss architecting a streaming Artemis Engine that ingests events from 15+ ad platforms in under 100ms and feeds your Bayesian models with live posteriors — enabling true in-flight budget reallocation.",
+    links: [
+      { label: "Read: Real-Time Streaming Attribution", href: "https://zenodo.org/records/18859841", primary: false },
+      { label: "Let's Talk → Book a Call", href: "https://www.linkedin.com/in/michael-forsythe-robinson-082255391/", primary: true }
+    ]
+  }
+};
+
+// State
+let current = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+
+function getTier(score) {
+  if (score <= 8)  return 1;
+  if (score <= 16) return 3;
+  return 5;
+}
+
+function buildStepDots() {
+  const wrap = document.getElementById('step-dots');
+  wrap.innerHTML = '';
+  QUESTIONS.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'step-dot';
+    wrap.appendChild(d);
+  });
+}
+
+function updateProgress() {
+  const pct = Math.round((current / QUESTIONS.length) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('q-current').textContent = current + 1;
+  document.getElementById('q-pct').textContent = pct + '% complete';
+  const dots = document.querySelectorAll('.step-dot');
+  dots.forEach((d, i) => {
+    d.className = 'step-dot' + (i < current ? ' done' : i === current ? ' active' : '');
+  });
+}
+
+function renderQuestion() {
+  const q = QUESTIONS[current];
+  document.getElementById('q-num-label').textContent = `Question ${current + 1} of ${QUESTIONS.length}`;
+  document.getElementById('q-text').textContent = q.text;
+
+  const optWrap = document.getElementById('q-options');
+  optWrap.innerHTML = '';
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'option' + (answers[current] === idx ? ' selected' : '');
+    btn.innerHTML = `<span class="option-key">${opt.key}</span><span class="option-text">${opt.text}</span>`;
+    btn.onclick = () => selectOption(idx);
+    optWrap.appendChild(btn);
+  });
+
+  document.getElementById('btn-back').style.visibility = current === 0 ? 'hidden' : 'visible';
+  const nextBtn = document.getElementById('btn-next');
+  const nextLabel = document.getElementById('next-label');
+  nextBtn.disabled = answers[current] === null;
+  nextLabel.textContent = current === QUESTIONS.length - 1 ? '— View Results' : '→';
+
+  // Re-animate card
+  const card = document.getElementById('question-card');
+  card.style.animation = 'none';
+  card.offsetHeight; // reflow
+  card.style.animation = '';
+}
+
+function selectOption(idx) {
+  answers[current] = idx;
+  document.querySelectorAll('.option').forEach((el, i) => {
+    el.className = 'option' + (i === idx ? ' selected' : '');
+  });
+  document.getElementById('btn-next').disabled = false;
+}
+
+function goNext() {
+  if (answers[current] === null) return;
+  if (current === QUESTIONS.length - 1) {
+    showResults();
+    return;
+  }
+  current++;
+  updateProgress();
+  renderQuestion();
+}
+
+function goBack() {
+  if (current === 0) return;
+  current--;
+  updateProgress();
+  renderQuestion();
+}
+
+function showResults() {
+  document.getElementById('quiz').style.display = 'none';
+  const resultsEl = document.getElementById('results');
+  resultsEl.style.display = 'block';
+
+  const score = answers.reduce((sum, ansIdx, qIdx) => {
+    return sum + (ansIdx !== null ? QUESTIONS[qIdx].options[ansIdx].pts : 0);
+  }, 0);
+
+  const tier = getTier(score);
+  const t = TIERS[tier];
+
+  // Score ring
+  const circumference = 2 * Math.PI * 50; // 314.16
+  const fill = (score / 24) * circumference;
+  const ring = document.getElementById('ring-fill');
+  ring.style.stroke = t.ringColor;
+  ring.setAttribute('stroke-dasharray', `0 ${circumference}`);
+  setTimeout(() => {
+    ring.setAttribute('stroke-dasharray', `${fill} ${circumference}`);
+  }, 100);
+
+  // Animate score number
+  document.getElementById('res-score').textContent = '0';
+  let n = 0;
+  const inc = setInterval(() => {
+    n = Math.min(n + 1, score);
+    document.getElementById('res-score').textContent = n;
+    if (n >= score) clearInterval(inc);
+  }, 40);
+
+  // Tier badge
+  const badge = document.getElementById('tier-badge');
+  badge.textContent = t.badge;
+  badge.className = `tier-badge ${t.cls}`;
+
+  document.getElementById('res-title').textContent = t.title;
+  document.getElementById('res-sub').textContent = t.sub;
+
+  // Prescription
+  const box = document.getElementById('prescription-box');
+  box.className = `prescription ${t.boxCls}`;
+  document.getElementById('pres-title').textContent = t.presTitle;
+  document.getElementById('pres-body').textContent = t.presBody;
+
+  const linksWrap = document.getElementById('pres-links');
+  linksWrap.innerHTML = '';
+  t.links.forEach(l => {
+    const a = document.createElement('a');
+    a.href = l.href;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.className = `btn btn-lg ${l.primary ? 'btn-primary' : 'btn-ghost'}`;
+    a.textContent = l.label;
+    linksWrap.appendChild(a);
+  });
+
+  // Breakdown
+  const breakdownWrap = document.getElementById('answer-breakdown');
+  breakdownWrap.innerHTML = '';
+  QUESTIONS.forEach((q, i) => {
+    const ansIdx = answers[i];
+    const opt = ansIdx !== null ? q.options[ansIdx] : null;
+    const pts = opt ? opt.pts : 0;
+    const row = document.createElement('div');
+    row.className = 'answer-row';
+    row.innerHTML = `
+      <div class="answer-q"><strong>Q${i+1}.</strong> ${q.text.length > 60 ? q.text.slice(0,60)+'…' : q.text}</div>
+      <div class="answer-pts pts-${pts}">${pts} pt${pts !== 1 ? 's' : ''}</div>
+    `;
+    breakdownWrap.appendChild(row);
+  });
+
+  resultsEl.scrollIntoView({ behavior: 'smooth' });
+}
+
+function restart() {
+  current = 0;
+  answers = new Array(QUESTIONS.length).fill(null);
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('quiz').style.display = 'block';
+  updateProgress();
+  renderQuestion();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Init
+buildStepDots();
+updateProgress();
+renderQuestion();
+</script>
+</body>
+</html>
