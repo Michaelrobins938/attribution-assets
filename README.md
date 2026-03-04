@@ -24,22 +24,30 @@ This repository serves as the central hub for the **Forsythe Attribution Framewo
 
 ## 📚 The 10-Paper Measurement Stack (Zenodo DOIs)
 
-This complete measurement stack has been formally codified, compiled in LaTeX, and published. Each paper addresses a specific failure point in modern marketing analytics and provides a production-ready solution.
+This complete measurement stack has been formally codified, compiled in LaTeX, and published. Each paper addresses a specific failure point in modern marketing analytics and provides a production-ready solution. Every framework ships with a **live interactive dashboard**.
 
-| # | Technical Focus | Published Whitepaper | Official DOI |
-|:---:|:---|:---|:---|
-| **I** | **Core Framework** | A First-Principles Hybrid Attribution Framework | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18557680-1a365d.svg)](https://doi.org/10.5281/zenodo.18557680) |
-| **II** | **Optimization** | Bayesian Media Mix Modeling: Axiomatic Budget Optimization | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18599386-1a365d.svg)](https://doi.org/10.5281/zenodo.18599386) |
-| **III** | **Psychographics** | Behavioral Profiling and Causal Uplift | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18599425-1a365d.svg)](https://doi.org/10.5281/zenodo.18599425) |
-| **IV** | **Game Theory** | The Causal Calibration System | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18599433-1a365d.svg)](https://doi.org/10.5281/zenodo.18599433) |
-| **V** | **Entity Resolution** | Probabilistic Identity Resolution | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860338-1a365d.svg)](https://doi.org/10.5281/zenodo.18860338) |
-| **VI** | **Broadcast Sync** | Live Event Attribution | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860339-1a365d.svg)](https://doi.org/10.5281/zenodo.18860339) |
-| **VII** | **Pipelines** | Real-Time Streaming Attribution | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860342-1a365d.svg)](https://doi.org/10.5281/zenodo.18860342) |
-| **VIII** | **Geo-Testing** | Incrementality Testing at Scale | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860345-1a365d.svg)](https://doi.org/10.5281/zenodo.18860345) |
-| **IX** | **Data Engineering**| Marketing Data Connectors | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860349-1a365d.svg)](https://doi.org/10.5281/zenodo.18860349) |
-| **X** | **Reconciliation** | The MMM-Incrementality Bridge | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860350-1a365d.svg)](https://doi.org/10.5281/zenodo.18860350) |
+| # | Technical Focus | Published Whitepaper | Official DOI | Live Demo |
+|:---:|:---|:---|:---|:---|
+| **I** | **Core Framework** | A First-Principles Hybrid Attribution Framework | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18557680-1a365d.svg)](https://doi.org/10.5281/zenodo.18557680) | [![Live](https://img.shields.io/badge/▶_Streaming_Engine-2ea44f.svg)](https://streaming-attribution-dashboard.vercel.app/) |
+| **II** | **Optimization** | Bayesian Media Mix Modeling: Axiomatic Budget Optimization | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18599386-1a365d.svg)](https://doi.org/10.5281/zenodo.18599386) | [![Live](https://img.shields.io/badge/▶_MMM_Optimizer-2ea44f.svg)](https://mmm-dashboard-mu.vercel.app/) |
+| **III** | **Psychographics** | Behavioral Profiling and Causal Uplift | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18599425-1a365d.svg)](https://doi.org/10.5281/zenodo.18599425) | [![Live](https://img.shields.io/badge/▶_Profiling_Suite-2ea44f.svg)](https://behavioral-profiling-dashboard.vercel.app/) |
+| **IV** | **Game Theory** | The Causal Calibration System | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18599433-1a365d.svg)](https://doi.org/10.5281/zenodo.18599433) | [![Live](https://img.shields.io/badge/▶_Causal_Inference-2ea44f.svg)](https://causal-inference-dashboard.vercel.app/) |
+| **V** | **Entity Resolution** | Probabilistic Identity Resolution | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860338-1a365d.svg)](https://doi.org/10.5281/zenodo.18860338) | [![Live](https://img.shields.io/badge/▶_Identity_Graph-2ea44f.svg)](https://identity-resolution-demo.vercel.app/) |
+| **VI** | **Broadcast Sync** | Live Event Attribution | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860339-1a365d.svg)](https://doi.org/10.5281/zenodo.18860339) | [![Live](https://img.shields.io/badge/▶_Live_Events-2ea44f.svg)](https://live-event-attribution-dashboard.vercel.app/) |
+| **VII** | **Pipelines** | Real-Time Streaming Attribution | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860342-1a365d.svg)](https://doi.org/10.5281/zenodo.18860342) | [![Live](https://img.shields.io/badge/▶_Streaming_Engine-2ea44f.svg)](https://streaming-attribution-dashboard.vercel.app/) |
+| **VIII** | **Geo-Testing** | Incrementality Testing at Scale | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860345-1a365d.svg)](https://doi.org/10.5281/zenodo.18860345) | [![Live](https://img.shields.io/badge/▶_Incrementality-2ea44f.svg)](https://incrementality-testing-dashboard.vercel.app/) |
+| **IX** | **Data Engineering**| Marketing Data Connectors | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860349-1a365d.svg)](https://doi.org/10.5281/zenodo.18860349) | [![Live](https://img.shields.io/badge/▶_Connector_Hub-2ea44f.svg)](https://frontend-pi-eight-70.vercel.app/) |
+| **X** | **Reconciliation** | The MMM-Incrementality Bridge | [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18860350-1a365d.svg)](https://doi.org/10.5281/zenodo.18860350) | [![Live](https://img.shields.io/badge/▶_MMM_Bridge-2ea44f.svg)](https://mmm-dashboard-mu.vercel.app/) |
 
 *(📖 **Read the Docs:** Full HTML versions of these whitepapers are hosted dynamically via [GitHub Pages](https://Michaelrobins938.github.io/attribution-assets/).)*
+
+### 🛰️ Extended Platform Dashboards
+
+| Dashboard | Purpose |
+|:---|:---|
+| [![Experimentation](https://img.shields.io/badge/▶_Experimentation_Platform-0969da.svg)](https://experimentation-platform-dashboard.vercel.app/) | A/B testing and multi-armed bandit experiment management |
+| [![Demand Forecasting](https://img.shields.io/badge/▶_Demand_Forecasting-0969da.svg)](https://demand-forecasting-dashboard-wine.vercel.app/) | Time-series forecasting with Prophet and hierarchical reconciliation |
+| [![Portfolio Hub](https://img.shields.io/badge/▶_Portfolio_Command_Center-0969da.svg)](https://portfolio-hub-kappa-murex.vercel.app/) | Central navigation hub across all live systems |
 
 ---
 
