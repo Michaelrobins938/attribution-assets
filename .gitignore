@@ -1,0 +1,58 @@
+demand-forecasting/
+experimentation-platform/
+first-principles-attribution-repo/
+incrementality-testing/
+mmm_project/
+probabilistic-identity-resolution/
+portfolio-hub/
+.gitnexus/
+
+# Internal working docs
+linkedin/
+substack/
+outreach/
+gitnexus/
+GitNexus-main/
+image-video/
+.snapshots/
+src/
+
+# Claude / AI tooling
+.claude/
+AGENTS.md
+CLAUDE.md
+
+# Scripts
+*.bat
+*.sh
+*.ps1
+verify_*.py
+
+# Logs and media
+*.log
+*.pdf
+*.mp4
+*.jpg
+*.png
+*.jpeg
+
+# Sensitive
+zenodo_uploads.json
+
+# Internal planning
+PHASE1_PHASE2_STATUS.md
+IMPACTFUL_ADDITIONS.md
+PORTFOLIO_UPDATE.md
+SHOWCASE_PROJECTS_SUMMARY.md
+
+# Noise in docs/
+docs/COMPLETE_ACTION_PLAN.md
+docs/PUBLICATION_SYSTEM_GUIDE.md
+docs/ONLINE_COMPILATION_GUIDE.md
+docs/ACADEMIC_PREPARATION_README.md
+docs/CITATION_MONITORING_GUIDE.md
+docs/CROSS_REFERENCE_GUIDE.md
+docs/PUBLICATION_COMPLETE.md
+docs/PUBLICATION_READY_SUMMARY.md
+docs/WHITEPAPER.md
+docs/WHITEPAPER_DEVELOPMENT_PLAN.md
