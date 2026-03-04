@@ -1,4 +1,12 @@
-# Behavioral Profiling & Causal Uplift: Beyond The Conversion
+---
+layout: default
+title: "Behavioral Profiling and Causal Uplift: Beyond The Conversion"
+description: "Segmenting redundant reach, incremental intent, and psychological transition logic."
+author: Michael Forsythe Robinson
+doi: "10.5281/zenodo.18599425"
+---
+
+# Behavioral Profiling and Causal Uplift: Beyond The Conversion
 ## Segmenting Redundant Reach, Incremental Intent, and Psychological Transition Logic
 
 **Technical Whitepaper v1.0.0**

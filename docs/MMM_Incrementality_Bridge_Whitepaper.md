@@ -1,3 +1,11 @@
+---
+layout: default
+title: "The MMM-Incrementality Validation Bridge"
+description: "Cross-validating media mix modeling with experimental causal inference."
+author: Michael Forsythe Robinson
+doi: "10.5281/zenodo.18860350"
+---
+
 # The MMM-Incrementality Validation Bridge
 ## Cross-Validating Media Mix Modeling with Experimental Causal Inference
 

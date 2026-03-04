@@ -1,4 +1,12 @@
-# Incrementality & Geo-Testing: Recovering True Causal Lift
+---
+layout: default
+title: "Incrementality and Geo-Testing: Recovering True Causal Lift"
+description: "Integrating synthetic control, difference-in-differences, and placebo-validated inference."
+author: Michael Forsythe Robinson
+doi: "10.5281/zenodo.18860345"
+---
+
+# Incrementality and Geo-Testing: Recovering True Causal Lift
 ## Integrating Synthetic Control, Difference-in-Differences, and Placebo-Validated Inference
 
 **Technical Whitepaper v1.0.0**

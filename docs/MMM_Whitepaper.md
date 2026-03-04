@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Bayesian Media Mix Modeling: Axiomatic Budget Optimization"
+description: "Integrating non-linear saturation, temporal adstock decay, and Bayesian posterior inference."
+author: Michael Forsythe Robinson
+doi: "10.5281/zenodo.18599386"
+---
+
 # Bayesian Media Mix Modeling (MMM): Axiomatic Budget Optimization
 ## Integrating Non-Linear Saturation, Temporal Adstock Decay, and Bayesian Posterior Inference
 

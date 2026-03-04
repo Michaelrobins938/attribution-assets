@@ -126,11 +126,86 @@ Every production model must pass the **Validation Suite**:
 - **Collinearity:** Different channels (TV and Search) often move in sync, making it difficult to separate their effects.
 - **Resolution:** Weekly granularity limits the ability to see short-term (daily/hourly) spikes.
 
+### **7.1 Validation Against Incrementality Testing**
+
+MMM provides aggregate ROI estimates but should be validated against experimental incrementality testing. The **MMM-Incrementality Validation Bridge** (Robinson, 2026) enables systematic cross-validation by:
+
+1. Comparing MMM ROI confidence intervals with incrementality lift CIs
+2. Computing gap scores to identify channels requiring testing
+3. Building feedback loops to improve MMM specification
+4. Prioritizing which channels to test based on spend and uncertainty
+
+This integration ensures MMM recommendations are grounded in causal truth while maintaining the scalability of aggregate modeling.
+
 ---
 
 ## **8. Conclusion**
 
 The Bayesian MMM framework transforms marketing from a "cost center" into a "predictable investment engine." By moving away from rule-based attribution and toward axiomatic, non-linear modeling, organizations can achieve a "single source of truth" for cross-channel budget decisions.
+
+---
+
+## **9. Strategic Implementation Guide**
+
+### **9.1 The 5 Most Valuable Insights**
+
+| # | Insight | What Decisions It Informs |
+|---|---------|---------------------------|
+| 1 | **MMM is aggregate, not individual** - Privacy-compliant but loses user-level precision | When to use MMM vs attribution |
+| 2 | **Adstock reveals channel memory** - TV has long memory (weeks), Search has short (days) | Budget timing decisions |
+| 3 | **Saturation is where money is lost** - Marginal ROAS drops at saturation; optimizer fixes this | Reallocation strategy |
+| 4 | **Bayesian = uncertainty quantification** - Not just ROI, but confidence in ROI | Risk management |
+| 5 | **Validation via bridge** - MMM alone is insufficient; needs incrementality check | Trust level |
+
+### **9.2 Implementation: 5-Step Plan**
+
+| Step | Action | Owner | Quick Win | Measurable Result |
+|------|--------|-------|-----------|-------------------|
+| 1 | Prepare data via connectors | Data Engineering | Clean dataset | MMM-ready data |
+| 2 | Fit baseline model | Data Science | First pass ROI | Channel coefficients |
+| 3 | Validate via bridge | Data Science | Gap analysis | Validated confidence |
+| 4 | Run optimizer | Analytics | Budget allocation | Recommended spend |
+| 5 | Implement and monitor | Marketing | ROAS change | +X% improvement |
+
+### **9.3 Hidden Assumptions & Blind Spots**
+
+| Assumption | What If It's Wrong |
+|------------|-------------------|
+| Adstock form correct | Systematic bias in all channel estimates |
+| No confounders | Omitted variable bias |
+| Stationarity | Coefficients drift over time |
+| Additivity | Interactions misattributed |
+
+### **9.4 Compare Opposing Views**
+
+| Perspective | Works When |
+|-------------|------------|
+| **Frequentist OLS** | Quick estimates, no uncertainty needed |
+| **Bayesian (This Paper)** | Uncertainty matters, priors available |
+| **Machine Learning** | Complex patterns, less interpretability needed |
+
+### **9.5 Leverage Points**
+
+| # | Leverage Point | Expected Impact |
+|---|---------------|-----------------|
+| 1 | Saturation modeling | 10-20% more efficient spend |
+| 2 | Bayesian priors from incrementality | +5-10% accuracy |
+| 3 | Optimizer | +15-25% ROAS |
+
+### **9.6 Contrarian Takeaways**
+
+1. **Weekly data is sufficient** - Daily adds noise, not signal
+2. **Simple adstock usually works** - Geometric > Weibull in most cases
+3. **More channels = worse MMM** - Limit to 5-8 primary channels
+4. **Validation matters more than complexity** - Simple validated > Complex unvalidated
+
+### **9.7 Role-Specific Perspectives**
+
+| Role | Question | Answer |
+|------|----------|--------|
+| **Marketer** | What drives reach? | ROI by channel with confidence intervals |
+| **Founder** | What affects cash? | Optimizer recommendations for budget |
+| **Analyst** | What changes metrics? | MAPE, R-hat, posterior distributions |
 
 ---
 
@@ -145,3 +220,9 @@ The reference implementation uses a modular architecture:
 ### **Appendix B: References**
 [1] Jin, Y., et al. (2017). "Bayesian Methods for Media Mix Modeling with Carryover and Shape Effects." Google Research.
 [2] Chan, D., & Perry, S. (2017). "Challenges and Opportunities in Media Mix Modeling." Journal of Marketing Analytics.
+[3] Robinson, M.F. (2026a). "A First-Principles Hybrid Attribution Framework." Zenodo. https://doi.org/10.5281/zenodo.18557680
+[4] Robinson, M.F. (2026b). "Bayesian Media Mix Modeling: Axiomatic Budget Optimization." Zenodo. https://doi.org/10.5281/zenodo.18599386
+[5] Robinson, M.F. (2026c). "Behavioral Profiling and Causal Uplift: Beyond The Conversion." Zenodo. https://doi.org/10.5281/zenodo.18599425
+[6] Robinson, M.F. (2026d). "The Causal Calibration System: Stress-Testing Attribution Models." Zenodo. https://doi.org/10.5281/zenodo.18599433
+[7] Robinson, M.F. (2026e). "The MMM-Incrementality Validation Bridge." Zenodo. (Forthcoming)
+[8] Robinson, M.F. (2026f). "Marketing Data Connectors: Unified API Architecture." Zenodo. (Forthcoming)

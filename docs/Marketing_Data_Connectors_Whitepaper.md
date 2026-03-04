@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Marketing Data Connectors: Unified API Architecture"
+description: "Solving the multi-platform data aggregation problem for attribution pipelines."
+author: Michael Forsythe Robinson
+doi: "10.5281/zenodo.18860349"
+---
+
 # Marketing Data Connectors: Unified API Architecture
 ## Solving the Multi-Platform Data Aggregation Problem
 

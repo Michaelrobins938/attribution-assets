@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Real-Time Streaming Attribution: Scaling Causal Clarity"
+description: "High-throughput Markov modeling for millisecond-level marketing decisions."
+author: Michael Forsythe Robinson
+doi: "10.5281/zenodo.18860342"
+---
+
 # Real-Time Streaming Attribution: Scaling Causal Clarity
 ## High-Throughput Markov Modeling for Millisecond-Level Marketing Decisions
 

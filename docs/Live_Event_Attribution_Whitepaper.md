@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Live Event Attribution: Measuring Direct-to-Consumer Spikes"
+description: "Time-friction analysis, exponential decay, and Z-score significance for broadcast marketing."
+author: Michael Forsythe Robinson
+doi: "10.5281/zenodo.18860339"
+---
+
 # Live Event Attribution: Measuring Direct-to-Consumer Spikes
 ## Time-Friction Analysis, Exponential Decay, and Z-Score Significance for Broadcast Marketing
 

@@ -1,3 +1,11 @@
+---
+layout: default
+title: "The Causal Calibration System: Stress-Testing Attribution Models"
+description: "Validating mathematical integrity via synthetic ground truth and causal stress tests."
+author: Michael Forsythe Robinson
+doi: "10.5281/zenodo.18599433"
+---
+
 # The Causal Calibration System: Stress-Testing Attribution Models
 ## Validating Mathematical Integrity via Synthetic Ground Truth and Causal Stress Tests
 

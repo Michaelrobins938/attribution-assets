@@ -1,0 +1,12 @@
+theme: jekyll-theme-minimal
+title: Forsythe Attribution and Measurement Framework
+description: "10-paper marketing science framework: Bayesian MMM, causal inference, probabilistic identity resolution, and real-time streaming attribution."
+url: "https://michaelrobins938.github.io"
+baseurl: "/attribution-assets"
+author:
+  name: Michael Forsythe Robinson
+  url: "https://www.linkedin.com/in/michael-forsythe-robinson-082255391/"
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false

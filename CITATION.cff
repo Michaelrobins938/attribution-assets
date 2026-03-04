@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+title: "The Forsythe Attribution and Measurement Framework"
+message: "If you use this work, please cite it using the metadata from this file."
+type: dataset
+authors:
+  - family-names: Robinson
+    given-names: Michael Forsythe
+    orcid: ""
+repository-code: "https://github.com/Michaelrobins938/attribution-assets"
+url: "https://michaelrobins938.github.io/attribution-assets/"
+license: CC-BY-4.0
+version: "2.0.0"
+date-released: "2026-03-04"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.18557680"
+    description: "Paper I: A First-Principles Hybrid Attribution Framework"
+  - type: doi
+    value: "10.5281/zenodo.18599386"
+    description: "Paper II: Bayesian Media Mix Modeling"
+  - type: doi
+    value: "10.5281/zenodo.18599425"
+    description: "Paper III: Behavioral Profiling and Causal Uplift"
+  - type: doi
+    value: "10.5281/zenodo.18599433"
+    description: "Paper IV: The Causal Calibration System"
+  - type: doi
+    value: "10.5281/zenodo.18860338"
+    description: "Paper V: Probabilistic Identity Resolution"
+  - type: doi
+    value: "10.5281/zenodo.18860339"
+    description: "Paper VI: Live Event Attribution"
+  - type: doi
+    value: "10.5281/zenodo.18860342"
+    description: "Paper VII: Real-Time Streaming Attribution"
+  - type: doi
+    value: "10.5281/zenodo.18860345"
+    description: "Paper VIII: Incrementality Testing at Scale"
+  - type: doi
+    value: "10.5281/zenodo.18860349"
+    description: "Paper IX: Marketing Data Connectors"
+  - type: doi
+    value: "10.5281/zenodo.18860350"
+    description: "Paper X: The MMM-Incrementality Bridge"
+keywords:
+  - marketing attribution
+  - bayesian media mix modeling
+  - causal inference
+  - identity resolution
+  - shapley values
+  - markov chains
+  - incrementality testing
+  - streaming analytics

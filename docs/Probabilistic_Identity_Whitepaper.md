@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Probabilistic Identity Resolution: The Privacy-First Identity Graph"
+description: "Resolving discontinuous customer journeys via weighted clustering and household-level linkage."
+author: Michael Forsythe Robinson
+doi: "10.5281/zenodo.18860338"
+---
+
 # Probabilistic Identity Resolution: The Privacy-First Identity Graph
 ## Resolving Discontinuous Customer Journeys via Weighted Clustering and Household-Level Linkage
 
